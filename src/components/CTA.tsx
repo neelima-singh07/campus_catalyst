@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Mail, Bell } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export const CTA = () => {
@@ -55,9 +56,11 @@ export const CTA = () => {
             
             {/* Additional CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-              <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20">
-                Browse Opportunities
-              </Button>
+              <Link to="/internships">
+                <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20 w-full sm:w-auto">
+                  Browse Internships
+                </Button>
+              </Link>
               <Button variant="ghost" size="lg" className="text-white hover:bg-white/10">
                 Learn More
               </Button>

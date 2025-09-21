@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/img1-website.jpg";
 
 export const Hero = () => {
@@ -33,11 +34,13 @@ export const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="hero" size="lg" className="text-lg">
-                Get Started <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+              <Link to="/internships">
+                <Button variant="hero" size="lg" className="text-lg w-full sm:w-auto">
+                  Explore Internships <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
               <Button variant="outline" size="lg" className="text-lg bg-white/10 border-white/30 text-white hover:bg-white/20">
-                Explore Opportunities
+                View All Opportunities
               </Button>
             </div>
             
