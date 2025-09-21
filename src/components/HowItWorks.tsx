@@ -1,7 +1,15 @@
 import { Card } from "@/components/ui/card";
-import { Github, Linkedin, Code, Heart } from "lucide-react";
+import { Github, Linkedin, Code, Users } from "lucide-react";
 
 const developers = [
+  {
+    name: "Harleen Kaur",
+    role: "B.Tech ECE, IGDTUW '28", 
+    description: "Electronics and Communication engineering student with expertise in web development",
+    github: "https://github.com/Harilynn",
+    linkedin: "https://www.linkedin.com/in/harleen-kaur-b68aa1332?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    avatar: "HK"
+  },
   {
     name: "Neelima Singh",
     role: "B.Tech CSE-AI, IGDTUW '28",
@@ -14,13 +22,14 @@ const developers = [
     linkedin: "https://www.linkedin.com/in/neelima-singh-481294318/",
     avatar: "NS"
   },
+  
   {
-    name: "Harleen Kaur",
-    role: "B.Tech ECE, IGDTUW '28", 
-    description: "Electronics and Communication engineering student with expertise in web development",
-    github: "https://github.com/Harilynn",
-    linkedin: "https://www.linkedin.com/in/harleen-kaur-b68aa1332?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    avatar: "HK"
+    name: "Diya Kotru",
+    role: "B.Tech CSE, IGDTUW '28",
+    description: "Computer Science Engineering student passionate about technology and innovation",
+    github: "https://github.com/diyakotru",
+    linkedin: "https://www.linkedin.com/in/diya-kotru-9059a2322/",
+    avatar: "DK"
   }
 ];
 
@@ -34,7 +43,7 @@ export const HowItWorks = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-up">
           <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 text-white/90 text-sm">
-            <Heart className="w-4 h-4" />
+            <Users className="w-4 h-4" />
             Meet Our Team
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -46,7 +55,7 @@ export const HowItWorks = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {developers.map((developer, index) => (
             <Card key={index} className="relative p-8 bg-white/20 backdrop-blur-md border-white/30 hover:bg-white/25 hover:border-white/40 transition-all duration-500 animate-fade-up group hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20" style={{ animationDelay: `${index * 0.1}s` }}>
               
@@ -102,8 +111,8 @@ export const HowItWorks = () => {
         <div className="text-center mt-16">
           <div className="inline-flex items-center gap-2 text-white/80">
             <Code className="w-5 h-5" />
-            <span>Built with Lots of Love!</span>
-            <Heart className="w-5 h-5 text-red-400 fill-red-400 animate-pulse" />
+            <span>Built with Passion & Dedication!</span>
+            <Code className="w-5 h-5 text-blue-400 animate-pulse" />
           </div>
         </div>
       </div>
