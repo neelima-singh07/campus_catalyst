@@ -57,8 +57,34 @@ export const RoadmapTemplate = ({
   careerPaths = []
 }: RoadmapTemplateProps) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      <Navigation />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 relative overflow-hidden">
+      {/* Animated background particles - BEHIND content */}
+      <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+        <div className="absolute top-10 left-10 w-1 h-1 bg-blue-400 rounded-full animate-ping opacity-70"></div>
+        <div className="absolute top-32 right-20 w-2 h-2 bg-purple-400 rounded-full animate-pulse opacity-60"></div>
+        <div className="absolute bottom-20 left-1/4 w-1 h-1 bg-pink-400 rounded-full animate-bounce opacity-50"></div>
+        <div className="absolute top-1/2 right-10 w-3 h-3 bg-cyan-400/30 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-32 right-1/3 w-1 h-1 bg-yellow-400 rounded-full animate-ping opacity-40"></div>
+        <div className="absolute top-20 left-1/3 w-2 h-2 bg-green-400/40 rounded-full animate-bounce"></div>
+        <div className="absolute top-40 left-2/3 w-1 h-1 bg-orange-400 rounded-full animate-pulse opacity-60"></div>
+        <div className="absolute bottom-40 right-2/3 w-2 h-2 bg-teal-400/50 rounded-full animate-ping"></div>
+        <div className="absolute top-60 right-1/2 w-1 h-1 bg-violet-400 rounded-full animate-bounce opacity-70"></div>
+        
+        {/* Larger floating orbs */}
+        <div className="absolute top-16 right-1/4 w-8 h-8 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-16 left-1/5 w-6 h-6 bg-gradient-to-r from-purple-400/25 to-pink-400/25 rounded-full animate-bounce"></div>
+        <div className="absolute top-1/3 left-3/4 w-4 h-4 bg-gradient-to-r from-cyan-400/15 to-blue-400/15 rounded-full animate-pulse"></div>
+        
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(99, 102, 241, 0.4) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
+      </div>
+      
+      {/* Content layer - ABOVE background */}
+      <div className="relative z-10">
+        <Navigation />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
@@ -265,8 +291,43 @@ export const RoadmapTemplate = ({
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gray-900">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-20 px-4 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 overflow-hidden">
+        {/* Enhanced animated background elements - BEHIND content */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {/* Multi-layer gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/25 via-purple-600/25 to-pink-600/25"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
+          
+          {/* Dynamic floating particles/glitter */}
+          <div className="absolute top-10 left-10 w-2 h-2 bg-blue-400 rounded-full animate-pulse shadow-lg shadow-blue-400/50"></div>
+          <div className="absolute top-32 right-20 w-1 h-1 bg-purple-400 rounded-full animate-ping shadow-lg shadow-purple-400/50"></div>
+          <div className="absolute bottom-20 left-1/4 w-3 h-3 bg-pink-400 rounded-full animate-bounce shadow-lg shadow-pink-400/50"></div>
+          <div className="absolute top-1/2 right-10 w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-lg shadow-cyan-400/50"></div>
+          <div className="absolute bottom-32 right-1/3 w-1 h-1 bg-yellow-400 rounded-full animate-ping shadow-lg shadow-yellow-400/50"></div>
+          <div className="absolute top-20 left-1/3 w-2 h-2 bg-green-400 rounded-full animate-bounce shadow-lg shadow-green-400/50"></div>
+          <div className="absolute top-40 left-2/3 w-1 h-1 bg-orange-400 rounded-full animate-pulse shadow-lg shadow-orange-400/50"></div>
+          <div className="absolute bottom-40 right-2/3 w-2 h-2 bg-teal-400 rounded-full animate-ping shadow-lg shadow-teal-400/50"></div>
+          <div className="absolute top-60 right-1/2 w-1 h-1 bg-violet-400 rounded-full animate-bounce shadow-lg shadow-violet-400/50"></div>
+          
+          {/* Larger glowing orbs with enhanced effects */}
+          <div className="absolute top-16 right-1/4 w-12 h-12 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-full animate-pulse blur-sm"></div>
+          <div className="absolute bottom-16 left-1/5 w-8 h-8 bg-gradient-to-r from-purple-400/40 to-pink-400/40 rounded-full animate-bounce blur-sm"></div>
+          <div className="absolute top-1/3 left-3/4 w-6 h-6 bg-gradient-to-r from-cyan-400/25 to-blue-400/25 rounded-full animate-pulse blur-sm"></div>
+          
+          {/* Enhanced grid pattern */}
+          <div className="absolute inset-0 opacity-15" style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.4) 1px, transparent 0)`,
+            backgroundSize: '20px 20px'
+          }}></div>
+          
+          {/* Animated wave effect */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 animate-pulse"></div>
+          </div>
+        </div>
+        
+        {/* Content - ABOVE background */}
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Master {title}?
           </h2>
@@ -298,12 +359,13 @@ export const RoadmapTemplate = ({
                 Download Roadmap
               </Button>
             )}
-            <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800">
+            <Button size="lg" className="bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
               Join Discord Community
             </Button>
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 };

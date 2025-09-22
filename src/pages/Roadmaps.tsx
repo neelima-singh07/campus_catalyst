@@ -72,8 +72,34 @@ const roadmaps = [
 
 const Roadmaps = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      <Navigation />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 relative overflow-hidden">
+      {/* Animated background particles - BEHIND content */}
+      <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+        <div className="absolute top-10 left-10 w-1 h-1 bg-blue-400 rounded-full animate-ping opacity-70"></div>
+        <div className="absolute top-32 right-20 w-2 h-2 bg-purple-400 rounded-full animate-pulse opacity-60"></div>
+        <div className="absolute bottom-20 left-1/4 w-1 h-1 bg-pink-400 rounded-full animate-bounce opacity-50"></div>
+        <div className="absolute top-1/2 right-10 w-3 h-3 bg-cyan-400/30 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-32 right-1/3 w-1 h-1 bg-yellow-400 rounded-full animate-ping opacity-40"></div>
+        <div className="absolute top-20 left-1/3 w-2 h-2 bg-green-400/40 rounded-full animate-bounce"></div>
+        <div className="absolute top-40 left-2/3 w-1 h-1 bg-orange-400 rounded-full animate-pulse opacity-60"></div>
+        <div className="absolute bottom-40 right-2/3 w-2 h-2 bg-teal-400/50 rounded-full animate-ping"></div>
+        <div className="absolute top-60 right-1/2 w-1 h-1 bg-violet-400 rounded-full animate-bounce opacity-70"></div>
+        
+        {/* Larger floating orbs */}
+        <div className="absolute top-16 right-1/4 w-8 h-8 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-16 left-1/5 w-6 h-6 bg-gradient-to-r from-purple-400/25 to-pink-400/25 rounded-full animate-bounce"></div>
+        <div className="absolute top-1/3 left-3/4 w-4 h-4 bg-gradient-to-r from-cyan-400/15 to-blue-400/15 rounded-full animate-pulse"></div>
+        
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(99, 102, 241, 0.4) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
+      </div>
+      
+      {/* Content layer - ABOVE background */}
+      <div className="relative z-10">
+        <Navigation />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
@@ -156,8 +182,8 @@ const Roadmaps = () => {
 
       {/* CTA Section */}
       <section className="relative py-20 px-4 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0">
+        {/* Animated background elements - BEHIND content */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20"></div>
           
@@ -183,6 +209,7 @@ const Roadmaps = () => {
           }}></div>
         </div>
         
+        {/* Content - ABOVE background */}
         <div className="relative max-w-4xl mx-auto text-center z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
             Ready to Start Your Journey?
@@ -200,6 +227,7 @@ const Roadmaps = () => {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 };
