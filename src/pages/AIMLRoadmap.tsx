@@ -160,6 +160,7 @@ const AIMLRoadmap = () => {
       students="8,500+"
       rating={4.9}
       steps={aimlSteps}
+      pdfUrl="/pdfs/aiml-roadmap.pdf"
       prerequisites={["Python programming", "Basic mathematics", "Statistics knowledge"]}
       careerPaths={[
         "Machine Learning Engineer",

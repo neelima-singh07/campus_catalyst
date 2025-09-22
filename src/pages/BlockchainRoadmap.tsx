@@ -160,6 +160,7 @@ const BlockchainRoadmap = () => {
       students="4,800+"
       rating={4.5}
       steps={blockchainSteps}
+      pdfUrl="/pdfs/blockchain-roadmap.pdf"
       prerequisites={["Programming fundamentals", "Basic cryptography", "Web development basics"]}
       careerPaths={[
         "Blockchain Developer",

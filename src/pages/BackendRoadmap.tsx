@@ -160,6 +160,7 @@ const BackendRoadmap = () => {
       students="12,000+"
       rating={4.7}
       steps={backendSteps}
+      pdfUrl="/pdfs/backend-roadmap.pdf"
       prerequisites={["Programming fundamentals", "Basic understanding of web technologies"]}
       careerPaths={[
         "Backend Developer",

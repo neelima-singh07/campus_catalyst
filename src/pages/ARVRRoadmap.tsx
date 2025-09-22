@@ -160,6 +160,7 @@ const ARVRRoadmap = () => {
       students="3,200+"
       rating={4.6}
       steps={arvrSteps}
+      pdfUrl="/pdfs/arvr-roadmap.pdf"
       prerequisites={["Basic programming", "3D graphics concepts", "Unity basics"]}
       careerPaths={[
         "AR/VR Developer",
