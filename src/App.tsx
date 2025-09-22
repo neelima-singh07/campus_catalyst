@@ -12,6 +12,7 @@ import AIMLRoadmap from "./pages/AIMLRoadmap";
 import ARVRRoadmap from "./pages/ARVRRoadmap";
 import DSARoadmap from "./pages/DSARoadmap";
 import BlockchainRoadmap from "./pages/BlockchainRoadmap";
+import Resources from "./pages/Resources";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/internships" element={<Internships />} />
+          <Route path="/resources" element={<Resources />} />
           <Route path="/roadmaps" element={<Roadmaps />} />
           <Route path="/roadmaps/frontend" element={<FrontendRoadmap />} />
           <Route path="/roadmaps/backend" element={<BackendRoadmap />} />

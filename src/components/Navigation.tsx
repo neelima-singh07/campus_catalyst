@@ -6,6 +6,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Home, Briefcase, Map, ChevronDown } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export const Navigation = () => {
@@ -86,6 +87,16 @@ export const Navigation = () => {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+          <Link to="/resources">
+            <Button 
+              variant={location.pathname === "/resources" ? "default" : "ghost"} 
+              size="sm"
+              className="rounded-full"
+            >
+              <BookOpen className="w-4 h-4 mr-2" />
+              Resources
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>
