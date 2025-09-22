@@ -1,9 +1,16 @@
 import { Button } from "@/components/ui/button";
-import { Home, Briefcase } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Home, Briefcase, Map, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export const Navigation = () => {
   const location = useLocation();
+  const isRoadmapPath = location.pathname.startsWith("/roadmaps");
 
   return (
     <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
@@ -29,6 +36,56 @@ export const Navigation = () => {
               Programs
             </Button>
           </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button 
+                variant={isRoadmapPath ? "default" : "ghost"} 
+                size="sm"
+                className="rounded-full"
+              >
+                <Map className="w-4 h-4 mr-2" />
+                Roadmaps
+                <ChevronDown className="w-3 h-3 ml-1" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-48 mt-2">
+              <DropdownMenuItem asChild>
+                <Link to="/roadmaps" className="w-full">
+                  All Roadmaps
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/roadmaps/frontend" className="w-full">
+                  Frontend Development
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/roadmaps/backend" className="w-full">
+                  Backend Development
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/roadmaps/aiml" className="w-full">
+                  AI/ML
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/roadmaps/arvr" className="w-full">
+                  AR/VR
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/roadmaps/dsa" className="w-full">
+                  Data Structures & Algorithms
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/roadmaps/blockchain" className="w-full">
+                  Blockchain
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </nav>
