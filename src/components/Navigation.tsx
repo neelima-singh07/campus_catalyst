@@ -6,6 +6,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Home, Briefcase, Map, ChevronDown } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export const Navigation = () => {
@@ -15,7 +16,7 @@ export const Navigation = () => {
   return (
     <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
       <div className="bg-white/90 backdrop-blur-md border border-gray-200 rounded-full px-6 py-3 shadow-lg">
-        <div className="flex items-center gap-4">
+  <div className="flex items-center gap-7">
           <Link to="/">
             <Button 
               variant={location.pathname === "/" ? "default" : "ghost"} 
@@ -86,6 +87,16 @@ export const Navigation = () => {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+          <Link to="/resources">
+            <Button 
+              variant={location.pathname === "/resources" ? "default" : "ghost"} 
+              size="sm"
+              className="rounded-full"
+            >
+              <BookOpen className="w-4 h-4 mr-2" />
+              Resources
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>
