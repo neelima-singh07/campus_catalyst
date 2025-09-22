@@ -26,7 +26,7 @@ export const Navigation = () => {
               className="rounded-full"
             >
               <Briefcase className="w-4 h-4 mr-2" />
-              Internships
+              Programs
             </Button>
           </Link>
         </div>

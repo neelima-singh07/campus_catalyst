@@ -69,7 +69,7 @@ export const Features = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
             Opportunities That Transform Careers
           </h2>
-          <p className="text-lg text-gray-500">
+          <p className="text-lg text-white/70">
             Whether you're a first-year exploring possibilities or a final-year student ready to launch your career, we have the perfect opportunities for you.
           </p>
         </div>
@@ -85,11 +85,11 @@ export const Features = () => {
                 <h3 className="text-xl font-bold text-white">{opportunity.title}</h3>
               </div>
               
-              <p className="text-gray-500 mb-6">{opportunity.description}</p>
+              <p className="text-white/80 mb-6">{opportunity.description}</p>
               
               <ul className="space-y-3 mb-6">
                 {opportunity.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-sm text-gray-500">
+                  <li key={idx} className="flex items-center text-sm text-white/70">
                     <ArrowRight className="w-4 h-4 text-cyan-400 mr-2 flex-shrink-0" />
                     {feature}
                   </li>
@@ -109,7 +109,7 @@ export const Features = () => {
           <h3 className="text-3xl font-bold text-white mb-4">
             Why Choose Us?
           </h3>
-          <p className="text-lg text-gray-500">
+          <p className="text-lg text-white/70">
             We are more than just a platform. We are your partner in building a successful career.
           </p>
         </div>
@@ -121,7 +121,7 @@ export const Features = () => {
                 {benefit.icon}
               </div>
               <h4 className="text-lg font-semibold text-white mb-2">{benefit.title}</h4>
-              <p className="text-gray-500">{benefit.description}</p>
+              <p className="text-white/70">{benefit.description}</p>
             </Card>
           ))}
         </div>

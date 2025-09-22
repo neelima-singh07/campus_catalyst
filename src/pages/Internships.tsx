@@ -87,11 +87,11 @@ const Internships = () => {
                 <Briefcase className="w-8 h-8 text-purple-600" />
               </div>
               <h1 className="text-4xl font-bold text-gray-900">
-                Tech Internships & Programs
+                Tech Programs & Opportunities
               </h1>
             </div>
             <p className="text-xl text-gray-600 mb-8">
-              Discover amazing internship opportunities at top tech companies. 
+              Discover amazing program opportunities at top tech companies. 
               Filter by year, category, and preferences to find your perfect match.
             </p>
 
@@ -219,7 +219,7 @@ const Internships = () => {
             <>
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-gray-900">
-                  {filters.studentYear ? `${studentYearLabels[filters.studentYear]} ` : ''}Internships
+                  {filters.studentYear ? `${studentYearLabels[filters.studentYear]} ` : ''}Programs
                   <span className="text-lg font-normal text-gray-600 ml-2">
                     ({filteredInternships.length} {filteredInternships.length === 1 ? 'result' : 'results'})
                   </span>

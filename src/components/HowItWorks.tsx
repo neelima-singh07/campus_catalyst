@@ -35,10 +35,10 @@ const developers = [
 
 export const HowItWorks = () => {
   return (
-    <section className="py-24 gradient-hero relative overflow-hidden">
+    <section className="py-24 bg-gray-950 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-300/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-up">
@@ -57,30 +57,30 @@ export const HowItWorks = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {developers.map((developer, index) => (
-            <Card key={index} className="relative p-8 bg-white/20 backdrop-blur-md border-white/30 hover:bg-white/25 hover:border-white/40 transition-all duration-500 animate-fade-up group hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20" style={{ animationDelay: `${index * 0.1}s` }}>
+            <Card key={index} className="relative p-8 bg-gray-900 border border-gray-800 hover:bg-gray-800 hover:border-gray-700 transition-all duration-500 animate-fade-up group hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20" style={{ animationDelay: `${index * 0.1}s` }}>
               
               {/* Glow effect on hover */}
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               {/* Avatar */}
-              <div className="relative w-20 h-20 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold text-2xl mb-6 mx-auto shadow-lg group-hover:shadow-purple-400/50 transition-all duration-300 group-hover:scale-110">
+              <div className="relative w-20 h-20 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full flex items-center justify-center text-white font-bold text-2xl mb-6 mx-auto shadow-lg group-hover:shadow-cyan-400/50 transition-all duration-300 group-hover:scale-110">
                 {developer.avatar}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-600 to-purple-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
               </div>
               
               <div className="text-center relative z-10">
-                <h3 className="text-2xl font-light text-gray-800 mb-3 group-hover:text-gray-900 transition-colors duration-300">{developer.name}</h3>
-                <p className="text-gray-700 text-base font-normal mb-4 group-hover:text-gray-800 transition-colors duration-300">{developer.role}</p>
+                <h3 className="text-2xl font-light text-white mb-3 group-hover:text-white transition-colors duration-300">{developer.name}</h3>
+                <p className="text-white/90 text-base font-normal mb-4 group-hover:text-white transition-colors duration-300">{developer.role}</p>
                 
                 {/* Render achievements or description */}
                 {developer.achievements ? (
-                  <div className="text-gray-600 text-base mb-8 leading-relaxed group-hover:text-gray-800 transition-colors duration-300 space-y-2">
+                  <div className="text-white/80 text-base mb-8 leading-relaxed group-hover:text-white transition-colors duration-300 space-y-2">
                     {developer.achievements.map((achievement, idx) => (
                       <div key={idx} className="font-light">{achievement}</div>
                     ))}
                   </div>
                 ) : (
-                  <p className="text-gray-600 text-base mb-8 leading-relaxed group-hover:text-gray-800 transition-colors duration-300">{developer.description}</p>
+                  <p className="text-white/80 text-base mb-8 leading-relaxed group-hover:text-white transition-colors duration-300">{developer.description}</p>
                 )}
                 
                 {/* Social Links */}
@@ -89,7 +89,7 @@ export const HowItWorks = () => {
                     href={developer.github} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white/25 rounded-full flex items-center justify-center text-white hover:bg-purple-500 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/30 group/link"
+                    className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-gray-700 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/30 group/link"
                   >
                     <Github className="w-5 h-5 group-hover/link:animate-pulse" />
                   </a>
@@ -97,7 +97,7 @@ export const HowItWorks = () => {
                     href={developer.linkedin} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white/25 rounded-full flex items-center justify-center text-white hover:bg-blue-500 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 group/link"
+                    className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 group/link"
                   >
                     <Linkedin className="w-5 h-5 group-hover/link:animate-pulse" />
                   </a>
