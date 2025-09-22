@@ -7,12 +7,6 @@ import { FileText, UserCheck, MonitorSpeaker, Bookmark, File } from "lucide-reac
 const Resources = () => {
   const resources = [
     {
-      title: "Resume Templates (ATS, Overleap, Modern)",
-      desc: "Download ATS-friendly, Overleap, modern resume templates, and LaTeX CVs for all experience levels.",
-      to: "https://overleap.co/templates",
-      icon: FileText,
-    },
-    {
       title: "Overleaf LaTeX CV Templates",
       desc: "Browse and use free LaTeX CV/resume templates on Overleaf.",
       to: "https://www.overleaf.com/latex/templates/tagged/cv",
