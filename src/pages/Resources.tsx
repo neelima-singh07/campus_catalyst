@@ -7,34 +7,28 @@ import { FileText, UserCheck, MonitorSpeaker, Bookmark, File } from "lucide-reac
 const Resources = () => {
   const resources = [
     {
-      title: "Resume Templates",
-      desc: "Download clean, ATS-friendly resume templates for different experience levels.",
-      to: "/pdfs/dsa-roadmap-cpp.pdf",
+      title: "Resume Templates (ATS, Overleap, Modern)",
+      desc: "Download ATS-friendly, Overleap, modern resume templates, and LaTeX CVs for all experience levels.",
+      to: "https://overleap.co/templates",
       icon: FileText,
     },
     {
-      title: "Codolio / GitHub Profile Tips",
-      desc: "Guides to craft a strong Codolio/GitHub profile and showcase projects effectively.",
-      to: "https://github.com/",
+      title: "Overleaf LaTeX CV Templates",
+      desc: "Browse and use free LaTeX CV/resume templates on Overleaf.",
+      to: "https://www.overleaf.com/latex/templates/tagged/cv",
+      icon: FileText,
+    },
+    {
+      title: "Codolio Profile Guide",
+      desc: "How to build a standout Codolio profile with real examples and tips.",
+      to: "https://codolio.com/blog/how-to-create-codolio-profile",
       icon: UserCheck,
     },
     {
-      title: "Portfolio & Personal Site",
-      desc: "Quick checklist and templates to build a portfolio that converts.",
-      to: "https://example.com/portfolio-guide",
-      icon: MonitorSpeaker,
-    },
-    {
-      title: "Interview Prep",
-      desc: "Curated list of practice problems, mock interview tips and systems design primers.",
-      to: "https://example.com/interview-prep",
-      icon: Bookmark,
-    },
-    {
-      title: "Offer Negotiation",
-      desc: "Salary negotiation tips and a checklist for evaluating offers.",
-      to: "https://example.com/negotiation",
-      icon: File,
+      title: "GitHub Profile Readme Inspiration",
+      desc: "Awesome GitHub profile README templates and showcase projects.",
+      to: "https://github.com/abhisheknaiidu/awesome-github-profile-readme",
+      icon: UserCheck,
     },
   ];
 
@@ -42,7 +36,7 @@ const Resources = () => {
     <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-purple-50">
       <Navigation />
 
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-6 pt-24 pb-12">
         <div className="max-w-3xl mx-auto text-center mb-8">
           <h1 className="text-4xl font-bold">Resources</h1>
           <p className="text-gray-600 mt-2">
