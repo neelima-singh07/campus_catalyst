@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Internship } from "@/data/internships";
-import { Building2 } from "lucide-react";
+import { Building2, Calendar, MapPin, Clock, Star } from "lucide-react";
 
 interface InternshipCardProps {
   internship: Internship;
@@ -70,47 +70,141 @@ export const InternshipCard = ({ internship }: InternshipCardProps) => {
   };
 
   return (
-    <Card className="h-full hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary">
-      <CardHeader className="pb-3">
-        <div className="flex items-start justify-between gap-3">
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 mb-2">
-              <Building2 className="w-4 h-4 text-gray-500 flex-shrink-0" />
-              <span className="font-semibold text-gray-900 truncate">{internship.company}</span>
+    <div className="group relative h-full">
+      {/* Glassmorphism Background Effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-white/40 to-white/60 rounded-2xl backdrop-blur-lg border border-white/20 shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105"></div>
+      
+      <Card className="relative h-full bg-white/90 backdrop-blur-sm border border-gray-200/50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 overflow-hidden group">
+        {/* Gradient Border Effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-indigo-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        
+        {/* Category Color Strip */}
+        <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${getCategoryGradient(internship.category)} group-hover:h-2 transition-all duration-300`}></div>
+        
+        <CardHeader className="pb-3 relative z-10">
+          <div className="flex items-start justify-between gap-3 mb-2">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="p-1.5 bg-gradient-to-r from-gray-100 to-gray-200 rounded-lg group-hover:from-purple-100 group-hover:to-blue-100 transition-all duration-300">
+                  <Building2 className="w-4 h-4 text-gray-600 group-hover:text-purple-600 transition-colors duration-300" />
+                </div>
+                <div>
+                  <span className="font-bold text-gray-900 text-base group-hover:text-purple-900 transition-colors duration-300">
+                    {internship.company}
+                  </span>
+                  <div className="flex items-center gap-2 mt-0.5">
+                    <MapPin className="w-3 h-3 text-gray-400" />
+                    <span className="text-xs text-gray-500">{internship.location}</span>
+                    {internship.isRemote && (
+                      <Badge variant="outline" className="text-xs bg-green-50 text-green-600 border-green-200 px-1 py-0">
+                        Remote
+                      </Badge>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <CardTitle className="text-lg font-bold text-gray-900 group-hover:text-purple-900 line-clamp-2 transition-colors duration-300">
+                {internship.title}
+              </CardTitle>
             </div>
-            <CardTitle className="text-lg font-bold text-gray-900 line-clamp-2">
-              {internship.title}
-            </CardTitle>
-          </div>
-          <Badge className={getCategoryColor(internship.category)}>
-            {internship.category.charAt(0).toUpperCase() + internship.category.slice(1)}
-          </Badge>
-        </div>
-      </CardHeader>
-
-      <CardContent className="pt-0">
-        <div className="space-y-3">
-          {/* Eligible Years Tags */}
-          <div>
-            <div className="text-xs font-medium text-gray-500 mb-1">Eligible Years</div>
-            <div className="flex flex-wrap gap-1">
-              {getEligibleYears().map((year) => (
-                <Badge key={year} variant="outline" className="text-xs bg-blue-50 text-blue-700 border-blue-200">
-                  {year}
-                </Badge>
-              ))}
+            <div className="flex flex-col gap-1">
+              <Badge className={`${getCategoryColor(internship.category)} shadow-sm text-xs`}>
+                {internship.category.charAt(0).toUpperCase() + internship.category.slice(1)}
+              </Badge>
+              <div className="flex items-center gap-1">
+                <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
+                <span className="text-xs text-gray-600 font-medium">{getDifficultyLevel(internship.difficulty)}</span>
+              </div>
             </div>
           </div>
 
-          {/* Tentative Period */}
-          <div>
-            <div className="text-xs font-medium text-gray-500 mb-1">Period</div>
-            <Badge variant="outline" className="text-xs bg-green-50 text-green-700 border-green-200">
-              {getTentativePeriod()}
-            </Badge>
+          {/* Compact Description */}
+          <p className="text-xs text-gray-600 line-clamp-2 group-hover:text-gray-700 transition-colors duration-300">
+            {internship.description}
+          </p>
+        </CardHeader>
+
+        <CardContent className="pt-0 relative z-10">
+          <div className="space-y-3">
+            {/* Compact Key Details */}
+            <div className="grid grid-cols-2 gap-2">
+              <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-md group-hover:bg-purple-50 transition-colors duration-300">
+                <Calendar className="w-3 h-3 text-gray-500 group-hover:text-purple-500 transition-colors duration-300" />
+                <div>
+                  <div className="text-xs text-gray-500">Duration</div>
+                  <div className="text-xs font-medium text-gray-900">{internship.duration}</div>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-md group-hover:bg-blue-50 transition-colors duration-300">
+                <Clock className="w-3 h-3 text-gray-500 group-hover:text-blue-500 transition-colors duration-300" />
+                <div>
+                  <div className="text-xs text-gray-500">Deadline</div>
+                  <div className="text-xs font-medium text-gray-900">
+                    {new Date(internship.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Compact Eligible Years */}
+            <div>
+              <div className="text-xs font-medium text-gray-500 mb-1">Eligible Years</div>
+              <div className="flex flex-wrap gap-1">
+                {getEligibleYears().map((year) => (
+                  <Badge key={year} variant="outline" className="text-xs bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100 transition-colors duration-200 px-2 py-0">
+                    {year}
+                  </Badge>
+                ))}
+              </div>
+            </div>
           </div>
+        </CardContent>
+
+        {/* Floating Animation Elements */}
+        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <div className="w-2 h-2 bg-purple-400 rounded-full animate-ping"></div>
         </div>
-      </CardContent>
-    </Card>
+        <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+          <div className="w-1 h-1 bg-blue-400 rounded-full animate-ping animation-delay-200"></div>
+        </div>
+      </Card>
+    </div>
   );
+};
+
+// Helper function to get category gradient
+const getCategoryGradient = (category: string) => {
+  switch (category) {
+    case 'software':
+      return 'from-purple-500 to-purple-600';
+    case 'data':
+      return 'from-indigo-500 to-indigo-600';
+    case 'design':
+      return 'from-pink-500 to-pink-600';
+    case 'marketing':
+      return 'from-orange-500 to-orange-600';
+    case 'research':
+      return 'from-emerald-500 to-emerald-600';
+    case 'finance':
+      return 'from-yellow-500 to-yellow-600';
+    case 'consulting':
+      return 'from-cyan-500 to-cyan-600';
+    default:
+      return 'from-gray-500 to-gray-600';
+  }
+};
+
+// Helper function to get difficulty level display
+const getDifficultyLevel = (difficulty: string) => {
+  switch (difficulty) {
+    case 'beginner':
+      return 'Entry';
+    case 'intermediate':
+      return 'Mid';
+    case 'advanced':
+      return 'Expert';
+    default:
+      return 'All';
+  }
 };

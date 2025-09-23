@@ -292,6 +292,28 @@ export const internshipsData: Internship[] = [
     category: "finance",
     difficulty: "beginner"
   },
+  {
+    id: "codess-cafe-mentorship-1st",
+    title: "Codess Cafe Mentorship Cohorts",
+    company: "Codess Cafe",
+    location: "Remote",
+    type: "unpaid",
+    duration: "3-6 months",
+    studentYear: 1,
+    deadline: "2025-12-31",
+    requirements: [
+      "Female students in any year",
+      "Interest in technology and programming",
+      "Commitment to mentorship program",
+      "Basic programming knowledge preferred"
+    ],
+    description: "A mentorship program designed specifically for women in tech. Get paired with industry professionals for guidance, skill development, and career growth opportunities.",
+    skills: ["Mentorship", "Programming", "Career Development", "Networking"],
+    applicationLink: "https://www.codess.cafe/",
+    isRemote: true,
+    category: "software",
+    difficulty: "beginner"
+  },
 
   // 2nd Year Student Opportunities
   {
@@ -654,6 +676,50 @@ export const internshipsData: Internship[] = [
     category: "finance",
     difficulty: "advanced"
   },
+  {
+    id: "uber-she-plus-plus-2nd",
+    title: "Uber She++",
+    company: "Uber",
+    location: "Remote/Various Cities",
+    type: "unpaid",
+    duration: "Varies",
+    studentYear: 2,
+    deadline: "2025-12-31",
+    requirements: [
+      "2nd-year female students",
+      "Computer Science/Engineering background",
+      "Passion for technology and innovation",
+      "Interest in ride-sharing and mobility solutions"
+    ],
+    description: "Uber's diversity program designed to support and empower female students in technology. Participate in workshops, mentorship programs, and networking events.",
+    skills: ["Programming", "Mobile Development", "Problem Solving", "Innovation"],
+    applicationLink: "https://www.uber.com/us/en/careers/teams/university/",
+    isRemote: true,
+    category: "software",
+    difficulty: "beginner"
+  },
+  {
+    id: "codess-cafe-2nd",
+    title: "Codess Cafe",
+    company: "Microsoft",
+    location: "Remote/Global",
+    type: "unpaid",
+    duration: "Ongoing",
+    studentYear: 2,
+    deadline: "2025-12-31",
+    requirements: [
+      "Female students in any year",
+      "Passion for technology",
+      "Interest in learning and networking",
+      "No prior experience required"
+    ],
+    description: "A global community of female coders supported by Microsoft. Participate in mentorship programs, networking events, and skill development workshops.",
+    skills: ["Programming", "Networking", "Mentorship", "Community Building"],
+    applicationLink: "https://www.codess.net/",
+    isRemote: true,
+    category: "software",
+    difficulty: "beginner"
+  },
 
   // 3rd Year Student Opportunities
   {
@@ -752,7 +818,99 @@ export const internshipsData: Internship[] = [
     type: "paid",
     duration: "3 months",
     studentYear: 3,
-    deadline: "2024-02-28",
+    deadline: "2025-04-02",
+    requirements: [
+      "University students (18+ years old)",
+      "Programming experience",
+      "Open source contribution experience",
+      "Strong proposal writing skills"
+    ],
+    description: "Google Summer of Code is a global program focused on bringing new contributors into open source software development. Students work with an open source organization on a 3-month programming project during their break from university.",
+    skills: ["Open Source", "Programming", "Software Development", "Project Management"],
+    applicationLink: "https://summerofcode.withgoogle.com/",
+    isRemote: true,
+    stipendAmount: "$1500-$3300",
+    category: "software",
+    difficulty: "intermediate"
+  },
+  {
+    id: "atlassian-women-in-tech-3rd",
+    title: "Atlassian Women in Tech",
+    company: "Atlassian",
+    location: "Sydney/Remote",
+    type: "paid",
+    duration: "3-6 months",
+    studentYear: 3,
+    deadline: "2025-09-30",
+    requirements: [
+      "Female students in 3rd year",
+      "Computer Science or related field",
+      "Strong programming skills",
+      "Leadership potential"
+    ],
+    description: "Atlassian's program to support women in technology through internships, mentorship, and professional development opportunities. Includes stipend and potential for full-time conversion.",
+    skills: ["Software Development", "Leadership", "Collaboration Tools", "Agile"],
+    applicationLink: "https://www.atlassian.com/company/careers/students",
+    isRemote: true,
+    stipendAmount: "$2000-$3000",
+    category: "software",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cisco-code-with-cisco-3rd",
+    title: "Code with Cisco",
+    company: "Cisco",
+    location: "Bangalore/San Jose",
+    type: "paid",
+    duration: "3-4 months",
+    studentYear: 3,
+    deadline: "2025-07-31",
+    requirements: [
+      "3rd and 4th year students",
+      "Computer Science or related field",
+      "Networking and programming knowledge",
+      "Strong academic performance"
+    ],
+    description: "Cisco's comprehensive internship program offering hands-on experience in networking, cybersecurity, and software development. Includes mentorship and potential job offers.",
+    skills: ["Networking", "Cybersecurity", "Software Development", "System Design"],
+    applicationLink: "https://www.cisco.com/c/en/us/about/careers/working-at-cisco/students-and-new-graduate-programs.html",
+    isRemote: false,
+    stipendAmount: "$1500-$2500",
+    category: "software",
+    difficulty: "intermediate"
+  },
+  {
+    id: "flipkart-girls-wanna-code-3rd",
+    title: "Flipkart Girls Wanna Code",
+    company: "Flipkart",
+    location: "Bangalore/Remote",
+    type: "paid",
+    duration: "2-3 months",
+    studentYear: 3,
+    deadline: "2025-01-31",
+    requirements: [
+      "Female students in 3rd-4th year",
+      "Computer Science or related field",
+      "Strong programming skills",
+      "Problem-solving abilities"
+    ],
+    description: "Flipkart's initiative to encourage women in technology through internships, hackathons, and mentorship programs. Focus on e-commerce and technology innovation.",
+    skills: ["Programming", "E-commerce", "System Design", "Problem Solving"],
+    applicationLink: "https://www.flipkartcareers.com/#!/",
+    isRemote: true,
+    stipendAmount: "$1200-$2000",
+    category: "software",
+    difficulty: "intermediate"
+  },
+  {
+    id: "google-gsoc-3rd-fixed",
+    title: "GSOC (Google Summer of Code)",
+    company: "Google",
+    location: "Remote",
+    type: "paid",
+    duration: "3 months",
+    studentYear: 3,
+    deadline: "2025-04-02",
     requirements: [
       "Students in 1st-4th year",
       "Open source contribution experience",
@@ -972,6 +1130,96 @@ export const internshipsData: Internship[] = [
     category: "research",
     difficulty: "advanced"
   },
+  {
+    id: "codess-cafe-3rd",
+    title: "Codess Cafe",
+    company: "Microsoft",
+    location: "Remote/Global",
+    type: "unpaid",
+    duration: "Ongoing",
+    studentYear: 3,
+    deadline: "2025-12-31",
+    requirements: [
+      "Female students in any year",
+      "Passion for technology",
+      "Interest in learning and networking",
+      "No prior experience required"
+    ],
+    description: "A global community of female coders supported by Microsoft. Participate in mentorship programs, networking events, and skill development workshops.",
+    skills: ["Programming", "Networking", "Mentorship", "Community Building"],
+    applicationLink: "https://www.codess.net/",
+    isRemote: true,
+    category: "software",
+    difficulty: "beginner"
+  },
+  {
+    id: "walmart-sparkplug-3rd",
+    title: "Walmart Sparkplug",
+    company: "Walmart",
+    location: "Bentonville, AR/Remote",
+    type: "paid",
+    duration: "10 weeks",
+    studentYear: 3,
+    deadline: "2025-11-30",
+    requirements: [
+      "3rd-year students",
+      "Computer Science/Engineering background",
+      "Strong programming and analytical skills",
+      "Leadership potential and innovation mindset"
+    ],
+    description: "Walmart's accelerated development program for high-potential 3rd-year students. Get hands-on experience with cutting-edge retail technology and mentorship from senior leaders.",
+    skills: ["Programming", "Leadership", "Retail Technology", "Data Analytics"],
+    applicationLink: "https://careers.walmart.com/sparkplug",
+    isRemote: true,
+    stipendAmount: "$8,000-$10,000/month",
+    category: "software",
+    difficulty: "advanced"
+  },
+  {
+    id: "walmart-sparkathon-3rd",
+    title: "Walmart Sparkathon",
+    company: "Walmart",
+    location: "Bentonville, AR/Remote",
+    type: "unpaid",
+    duration: "2 days",
+    studentYear: 3,
+    deadline: "2026-07-31",
+    requirements: [
+      "3rd and 4th-year students",
+      "Computer Science/Engineering background",
+      "Problem-solving and innovation skills",
+      "Interest in retail and supply chain technology"
+    ],
+    description: "Walmart's premier hackathon challenging students to create innovative solutions for retail, supply chain, and customer experience problems.",
+    skills: ["Programming", "Innovation", "Retail Technology", "Supply Chain"],
+    applicationLink: "https://careers.walmart.com/sparkathon",
+    isRemote: true,
+    category: "software",
+    difficulty: "intermediate"
+  },
+  {
+    id: "walmart-codehers-3rd",
+    title: "Walmart CodeHers",
+    company: "Walmart",
+    location: "Bentonville, AR/Remote",
+    type: "paid",
+    duration: "12 weeks",
+    studentYear: 3,
+    deadline: "2026-02-28",
+    requirements: [
+      "3rd and 4th-year female students",
+      "Computer Science/Engineering background",
+      "Strong programming skills",
+      "Interest in retail technology and e-commerce"
+    ],
+    description: "Walmart's exclusive program for female students in technology. Work on cutting-edge retail solutions, e-commerce platforms, and supply chain innovations.",
+    skills: ["Programming", "E-commerce", "Retail Technology", "Data Analysis"],
+    applicationLink: "https://careers.walmart.com/us/jobs/category/campus-technology",
+    isRemote: true,
+    stipendAmount: "$7,000-$9,000/month",
+    category: "software",
+    difficulty: "intermediate"
+  },
 
   // 4th Year Student Opportunities
   {
@@ -1178,6 +1426,51 @@ export const internshipsData: Internship[] = [
     difficulty: "beginner"
   },
   {
+    id: "walmart-sparkathon-4th",
+    title: "Walmart Sparkathon",
+    company: "Walmart",
+    location: "Bentonville, AR/Remote",
+    type: "unpaid",
+    duration: "2 days",
+    studentYear: 4,
+    deadline: "2026-07-31",
+    requirements: [
+      "3rd and 4th-year students",
+      "Computer Science/Engineering background",
+      "Problem-solving and innovation skills",
+      "Interest in retail and supply chain technology"
+    ],
+    description: "Walmart's premier hackathon challenging students to create innovative solutions for retail, supply chain, and customer experience problems.",
+    skills: ["Programming", "Innovation", "Retail Technology", "Supply Chain"],
+    applicationLink: "https://careers.walmart.com/sparkathon",
+    isRemote: true,
+    category: "software",
+    difficulty: "intermediate"
+  },
+  {
+    id: "walmart-codehers-4th",
+    title: "Walmart CodeHers",
+    company: "Walmart",
+    location: "Bentonville, AR/Remote",
+    type: "paid",
+    duration: "12 weeks",
+    studentYear: 4,
+    deadline: "2026-02-28",
+    requirements: [
+      "3rd and 4th-year female students",
+      "Computer Science/Engineering background",
+      "Strong programming skills",
+      "Interest in retail technology and e-commerce"
+    ],
+    description: "Walmart's exclusive program for female students in technology. Work on cutting-edge retail solutions, e-commerce platforms, and supply chain innovations.",
+    skills: ["Programming", "E-commerce", "Retail Technology", "Data Analysis"],
+    applicationLink: "https://careers.walmart.com/us/jobs/category/campus-technology",
+    isRemote: true,
+    stipendAmount: "$7,000-$9,000/month",
+    category: "software",
+    difficulty: "intermediate"
+  },
+  {
     id: "american-express-hackathon-4th",
     title: "AMX Hackathon",
     company: "American Express",
@@ -1198,6 +1491,73 @@ export const internshipsData: Internship[] = [
     isRemote: true,
     category: "finance",
     difficulty: "advanced"
+  },
+  {
+    id: "codess-cafe-4th",
+    title: "Codess Cafe",
+    company: "Microsoft",
+    location: "Remote/Global",
+    type: "unpaid",
+    duration: "Ongoing",
+    studentYear: 4,
+    deadline: "2025-12-31",
+    requirements: [
+      "Female students in any year",
+      "Passion for technology",
+      "Interest in learning and networking",
+      "No prior experience required"
+    ],
+    description: "A global community of female coders supported by Microsoft. Participate in mentorship programs, networking events, and skill development workshops.",
+    skills: ["Programming", "Networking", "Mentorship", "Community Building"],
+    applicationLink: "https://www.codess.net/",
+    isRemote: true,
+    category: "software",
+    difficulty: "beginner"
+  },
+  {
+    id: "flipkart-girls-wanna-code-4th",
+    title: "Flipkart Girls Wanna Code",
+    company: "Flipkart",
+    location: "Bangalore/Remote",
+    type: "unpaid",
+    duration: "2 days",
+    studentYear: 4,
+    deadline: "2025-03-15",
+    requirements: [
+      "Female students in 3rd and 4th year",
+      "Computer Science/Engineering background",
+      "Programming knowledge",
+      "Passion for technology"
+    ],
+    description: "Exclusive hackathon for female students to showcase coding skills and innovative thinking. Win exciting prizes and get direct interview opportunities with Flipkart.",
+    skills: ["Programming", "Problem Solving", "Innovation", "Web Development"],
+    applicationLink: "https://dare2compete.com/hackathon/flipkart-girls-wanna-code",
+    isRemote: true,
+    category: "software",
+    difficulty: "intermediate"
+  },
+  {
+    id: "cisco-code-with-cisco-4th",
+    title: "Cisco Code with Cisco",
+    company: "Cisco",
+    location: "Bangalore/Remote",
+    type: "paid",
+    duration: "12 weeks",
+    studentYear: 4,
+    deadline: "2025-02-28",
+    requirements: [
+      "3rd and 4th year students",
+      "Computer Science/Engineering background",
+      "Strong programming skills",
+      "Interest in networking and cloud technologies"
+    ],
+    description: "Cisco's flagship internship program offering hands-on experience with networking technologies, cloud computing, and enterprise solutions. Get mentorship from industry experts.",
+    skills: ["Networking", "Cloud Computing", "Programming", "Enterprise Solutions"],
+    applicationLink: "https://www.cisco.com/c/en/us/about/careers/students-and-new-graduates.html",
+    isRemote: true,
+    stipendAmount: "₹40,000-₹60,000/month",
+    category: "software",
+    difficulty: "intermediate"
   },
   {
     id: "10",
