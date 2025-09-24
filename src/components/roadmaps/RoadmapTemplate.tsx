@@ -32,8 +32,8 @@ interface RoadmapTemplateProps {
   color: string;
   duration: string;
   difficulty: string;
-  students: string;
-  rating: number;
+  students?: string;
+  rating?: number;
   steps: RoadmapStep[];
   pdfUrl?: string;
   additionalPdfs?: { name: string; url: string; }[];
@@ -120,14 +120,6 @@ export const RoadmapTemplate = ({
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-gray-500" />
                   <span className="text-gray-700">{duration}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-gray-500" />
-                  <span className="text-gray-700">{students} students</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Star className="w-5 h-5 text-yellow-500 fill-current" />
-                  <span className="text-gray-700">{rating}/5</span>
                 </div>
                 <Badge variant="secondary">{difficulty}</Badge>
               </div>

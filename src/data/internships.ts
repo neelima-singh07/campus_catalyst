@@ -7,6 +7,7 @@ export interface Internship {
   duration: string;
   studentYear: number; // 1st year, 2nd year, 3rd year, 4th year
   deadline: string;
+  period?: string; // Application/Program period (e.g., "feb", "sept-oct", "july-aug", etc.) - temporarily optional
   requirements: string[];
   description: string;
   skills: string[];
@@ -29,6 +30,7 @@ export const internshipsData: Internship[] = [
     duration: "3 days",
     studentYear: 1,
     deadline: "2025-01-15",
+    period: "feb",
     requirements: [
       "Female students in 1st-4th year",
       "Basic programming knowledge",
@@ -51,6 +53,7 @@ export const internshipsData: Internship[] = [
     duration: "4 months",
     studentYear: 1,
     deadline: "2024-09-30",
+    period: "sept-oct",
     requirements: [
       "Female students in 1st year",
       "Computer Science or related field",
@@ -74,6 +77,7 @@ export const internshipsData: Internship[] = [
     duration: "3 months",
     studentYear: 1,
     deadline: "2024-11-30",
+    period: "oct-dec",
     requirements: [
       "Female students in 1st and 2nd year",
       "Basic programming knowledge",
@@ -97,6 +101,7 @@ export const internshipsData: Internship[] = [
     duration: "2 months",
     studentYear: 1,
     deadline: "2024-06-30",
+    period: "july-aug",
     requirements: [
       "Students in 1st-4th year",
       "Engineering/Computer Science background",
@@ -119,6 +124,7 @@ export const internshipsData: Internship[] = [
     duration: "3 months",
     studentYear: 1,
     deadline: "2024-08-31",
+    period: "sept",
     requirements: [
       "Students in 1st-4th year",
       "Any engineering discipline",
@@ -141,6 +147,7 @@ export const internshipsData: Internship[] = [
     duration: "2 days",
     studentYear: 1,
     deadline: "2024-06-30",
+    period: "july-aug",
     requirements: [
       "Students in 1st-4th year",
       "Creative and technical skills",
@@ -163,6 +170,7 @@ export const internshipsData: Internship[] = [
     duration: "3 months",
     studentYear: 1,
     deadline: "2024-02-28",
+    period: "march",
     requirements: [
       "Students in 1st-4th year",
       "Open source contribution experience",
@@ -186,6 +194,7 @@ export const internshipsData: Internship[] = [
     duration: "6-8 weeks",
     studentYear: 1,
     deadline: "2024-04-30",
+    period: "varies",
     requirements: [
       "Students in 1st-4th year",
       "Engineering background",
@@ -209,6 +218,7 @@ export const internshipsData: Internship[] = [
     duration: "3 months",
     studentYear: 1,
     deadline: "2024-02-06",
+    period: "twice a year",
     requirements: [
       "Female students in 1st-4th year",
       "Underrepresented groups in tech",
@@ -232,6 +242,7 @@ export const internshipsData: Internship[] = [
     duration: "1 year",
     studentYear: 1,
     deadline: "2024-08-31",
+    period: "aug-sept",
     requirements: [
       "1st year students",
       "STEM fields",
@@ -255,6 +266,7 @@ export const internshipsData: Internship[] = [
     duration: "1 year",
     studentYear: 1,
     deadline: "2024-08-31",
+    period: "sept",
     requirements: [
       "Students in 1st-4th year",
       "Engineering/Computer Science",
@@ -278,6 +290,7 @@ export const internshipsData: Internship[] = [
     duration: "1 year",
     studentYear: 1,
     deadline: "2024-08-31",
+    period: "aug-sept",
     requirements: [
       "Students in 1st-4th year",
       "Any discipline",
@@ -301,6 +314,7 @@ export const internshipsData: Internship[] = [
     duration: "3-6 months",
     studentYear: 1,
     deadline: "2025-12-31",
+    period: "all year",
     requirements: [
       "Female students in any year",
       "Interest in technology and programming",
@@ -325,6 +339,7 @@ export const internshipsData: Internship[] = [
     duration: "3 days",
     studentYear: 2,
     deadline: "2025-01-15",
+    period: "feb",
     requirements: [
       "Female students in 1st-4th year",
       "Basic programming knowledge",
@@ -347,6 +362,7 @@ export const internshipsData: Internship[] = [
     duration: "3 months",
     studentYear: 2,
     deadline: "2024-11-30",
+    period: "oct-dec",
     requirements: [
       "Female students in 1st and 2nd year",
       "Basic programming knowledge",
@@ -370,6 +386,7 @@ export const internshipsData: Internship[] = [
     duration: "2 months",
     studentYear: 2,
     deadline: "2024-06-30",
+    period: "july-aug",
     requirements: [
       "Students in 1st-4th year",
       "Engineering/Computer Science background",
@@ -392,6 +409,7 @@ export const internshipsData: Internship[] = [
     duration: "3 months",
     studentYear: 2,
     deadline: "2024-08-31",
+    period: "sept",
     requirements: [
       "Students in 1st-4th year",
       "Any engineering discipline",
@@ -414,6 +432,7 @@ export const internshipsData: Internship[] = [
     duration: "2 days",
     studentYear: 2,
     deadline: "2024-06-30",
+    period: "july-aug",
     requirements: [
       "Students in 1st-4th year",
       "Creative and technical skills",
@@ -436,6 +455,7 @@ export const internshipsData: Internship[] = [
     duration: "3 months",
     studentYear: 2,
     deadline: "2024-02-28",
+    period: "march",
     requirements: [
       "Students in 1st-4th year",
       "Open source contribution experience",
@@ -459,6 +479,7 @@ export const internshipsData: Internship[] = [
     duration: "6-8 weeks",
     studentYear: 2,
     deadline: "2024-04-30",
+    period: "varies",
     requirements: [
       "Students in 1st-4th year",
       "Engineering background",
@@ -482,6 +503,7 @@ export const internshipsData: Internship[] = [
     duration: "3 months",
     studentYear: 2,
     deadline: "2024-02-06",
+    period: "twice a year",
     requirements: [
       "Female students in 1st-4th year",
       "Underrepresented groups in tech",
@@ -505,6 +527,7 @@ export const internshipsData: Internship[] = [
     duration: "1 year",
     studentYear: 2,
     deadline: "2024-08-31",
+    period: "sept",
     requirements: [
       "Students in 1st-4th year",
       "Engineering/Computer Science",
@@ -528,6 +551,7 @@ export const internshipsData: Internship[] = [
     duration: "1 year",
     studentYear: 2,
     deadline: "2024-08-31",
+    period: "aug-sept",
     requirements: [
       "Students in 1st-4th year",
       "Any discipline",
@@ -551,6 +575,7 @@ export const internshipsData: Internship[] = [
     duration: "2 months",
     studentYear: 2,
     deadline: "2025-02-28",
+    period: "march",
     requirements: [
       "2nd year female students",
       "Engineering/Computer Science background",
@@ -573,6 +598,7 @@ export const internshipsData: Internship[] = [
     duration: "3 months",
     studentYear: 2,
     deadline: "2024-11-30",
+    period: "nov-dec",
     requirements: [
       "2nd year female students",
       "Computer Science or related field",
@@ -596,6 +622,7 @@ export const internshipsData: Internship[] = [
     duration: "Varies",
     studentYear: 2,
     deadline: "2024-12-31",
+    period: "varies",
     requirements: [
       "2nd year female students",
       "Interest in professional development",
@@ -618,6 +645,7 @@ export const internshipsData: Internship[] = [
     duration: "3 days",
     studentYear: 2,
     deadline: "2025-02-28",
+    period: "march",
     requirements: [
       "2nd and 3rd year students",
       "Engineering background",
@@ -640,6 +668,7 @@ export const internshipsData: Internship[] = [
     duration: "2 months",
     studentYear: 2,
     deadline: "2024-08-31",
+    period: "aug-sept",
     requirements: [
       "2nd year female students",
       "Electronics/Computer Science background",
@@ -663,6 +692,7 @@ export const internshipsData: Internship[] = [
     duration: "2 days",
     studentYear: 2,
     deadline: "2025-04-30",
+    period: "april-may",
     requirements: [
       "3rd and 4th year students",
       "Computer Science/Engineering background",
@@ -685,6 +715,7 @@ export const internshipsData: Internship[] = [
     duration: "Varies",
     studentYear: 2,
     deadline: "2025-12-31",
+    period: "varies",
     requirements: [
       "2nd-year female students",
       "Computer Science/Engineering background",
@@ -707,6 +738,7 @@ export const internshipsData: Internship[] = [
     duration: "Ongoing",
     studentYear: 2,
     deadline: "2025-12-31",
+    period: "all year",
     requirements: [
       "Female students in any year",
       "Passion for technology",

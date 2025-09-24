@@ -127,7 +127,7 @@ export const InternshipCard = ({ internship }: InternshipCardProps) => {
         <CardContent className="pt-0 relative z-10">
           <div className="space-y-3">
             {/* Compact Key Details */}
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-3 gap-2">
               <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-md group-hover:bg-purple-50 transition-colors duration-300">
                 <Calendar className="w-3 h-3 text-gray-500 group-hover:text-purple-500 transition-colors duration-300" />
                 <div>
@@ -142,6 +142,16 @@ export const InternshipCard = ({ internship }: InternshipCardProps) => {
                   <div className="text-xs text-gray-500">Deadline</div>
                   <div className="text-xs font-medium text-gray-900">
                     {new Date(internship.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-md group-hover:bg-green-50 transition-colors duration-300">
+                <Clock className="w-3 h-3 text-gray-500 group-hover:text-green-500 transition-colors duration-300" />
+                <div>
+                  <div className="text-xs text-gray-500">Period</div>
+                  <div className="text-xs font-medium text-gray-900">
+                    {internship.period ? formatPeriod(internship.period) : 'TBD'}
                   </div>
                 </div>
               </div>
@@ -171,6 +181,42 @@ export const InternshipCard = ({ internship }: InternshipCardProps) => {
       </Card>
     </div>
   );
+};
+
+// Helper function to format period display
+const formatPeriod = (period: string) => {
+  if (!period) return 'TBD';
+  
+  // Common period mappings
+  const periodMap: Record<string, string> = {
+    'feb': 'Feb',
+    'march': 'Mar',
+    'april': 'Apr',
+    'may': 'May',
+    'june': 'Jun',
+    'july': 'Jul',
+    'aug': 'Aug',
+    'sept': 'Sep',
+    'oct': 'Oct',
+    'nov': 'Nov',
+    'dec': 'Dec',
+    'jan': 'Jan',
+    'july-aug': 'Jul-Aug',
+    'sept-oct': 'Sep-Oct',
+    'oct-dec': 'Oct-Dec',
+    'nov-dec': 'Nov-Dec',
+    'dec-feb': 'Dec-Feb',
+    'jan-april': 'Jan-Apr',
+    'april-may': 'Apr-May',
+    'aug-sept': 'Aug-Sep',
+    'summer': 'Summer',
+    'winter': 'Winter',
+    'all year': 'Year-round',
+    'varies': 'Varies',
+    'twice a year': '2x/Year'
+  };
+  
+  return periodMap[period.toLowerCase()] || period.charAt(0).toUpperCase() + period.slice(1);
 };
 
 // Helper function to get category gradient
