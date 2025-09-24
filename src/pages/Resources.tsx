@@ -69,6 +69,12 @@ const Resources = () => {
       icon: File,
     },
     {
+      title: "Top 100 LeetCode Questions",
+      desc: "Master the most important LeetCode problems for technical interviews with detailed solutions and explanations.",
+      to: "https://instabyte.io/p/interview-master-100",
+      icon: Search,
+    },
+    {
       title: "Aptitude Test Interview Questions",
       desc: "Comprehensive collection of aptitude test questions and practice problems for technical interviews.",
       to: "https://www.naukri.com/code360/library/aptitude-test-interview-questions",
