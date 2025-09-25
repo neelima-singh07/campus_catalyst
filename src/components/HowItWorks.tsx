@@ -95,14 +95,14 @@ export const HowItWorks = () => {
               <div className={`relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r ${developer.gradientColors} rounded-2xl flex items-center justify-center text-white font-bold text-xl sm:text-2xl lg:text-3xl mb-6 sm:mb-8 mx-auto shadow-2xl group-hover:shadow-3xl group-hover:scale-125 transition-all duration-500 group-hover:rotate-3 overflow-hidden`}>
                 {developer.name === "Neelima Singh" ? (
                   <img 
-                    src="/src/WhatsApp Image 2025-07-26 at 5.01.56 PM.jpeg" 
+                    src="/neelima-profile.jpeg" 
                     alt="Neelima Singh" 
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                ) : developer.name === "Harleen Kaur" ? (
+                ) : developer.name === "Diya Kotru" ? (
                   <img 
-                    src="/WhatsApp Image 2025-09-25 at 14.44.47.jpeg" 
-                    alt="Harleen Kaur" 
+                    src="/diya@dev.jfif" 
+                    alt="Diya Kotru" 
                     className="w-full h-full object-cover rounded-2xl"
                   />
                 ) : (

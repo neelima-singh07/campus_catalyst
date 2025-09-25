@@ -4,7 +4,7 @@
 
 Campus Career Bloom is a modern, responsive web application designed to help students and professionals discover and navigate tech career opportunities. Built with cutting-edge technologies, it provides an intuitive and engaging platform for career development and tech industry exploration.
 
-![Campus Career Bloom](src/assets/hero-image.jpg)
+
 
 ## ✨ Features
 
