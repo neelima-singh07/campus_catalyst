@@ -6,7 +6,7 @@ const developers = [
     name: "Harleen Kaur",
     role: "B.Tech ECE, IGDTUW '28", 
     description: "Electronics & Communication wizard turning circuits into digital magic ⚡",
-    specialties: ["Web Development", "UI/UX Design", "Problem Solving"],
+    specialties: ["Web Development", "UI/UX Design", "Problem Solving", "IoT", "DSA"],
     github: "https://github.com/Harilynn",
     linkedin: "https://www.linkedin.com/in/harleen-kaur-b68aa1332?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     avatar: "HK",
@@ -97,6 +97,12 @@ export const HowItWorks = () => {
                   <img 
                     src="/src/WhatsApp Image 2025-07-26 at 5.01.56 PM.jpeg" 
                     alt="Neelima Singh" 
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
+                ) : developer.name === "Harleen Kaur" ? (
+                  <img 
+                    src="/WhatsApp Image 2025-09-25 at 14.44.47.jpeg" 
+                    alt="Harleen Kaur" 
                     className="w-full h-full object-cover rounded-2xl"
                   />
                 ) : (

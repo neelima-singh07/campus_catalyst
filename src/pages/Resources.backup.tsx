@@ -2,9 +2,12 @@ import { Navigation } from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { FileText, UserCheck, MonitorSpeaker, Bookmark, File, ExternalLink, BookOpen, Calendar, HelpCircle, Building, Archive, FileSpreadsheet, Search } from "lucide-react";
+import { FileText, UserCheck, MonitorSpeaker, Bookmark, File, ExternalLink, BookOpen, Calendar, HelpCircle, Building, Archive, FileSpreadsheet, Search, Filter } from "lucide-react";
+import { useState } from "react";
 
 const Resources = () => {
+  const [activeFilter, setActiveFilter] = useState("all");
+
   const resumeTemplates = [
     {
       title: "Resume Building Guide",
@@ -71,10 +74,23 @@ const Resources = () => {
     },
   ];
 
+  const aptitudeResources = [
+    {
+      title: "Goldman Sachs Aptitude Questions",
+      desc: "Complete Goldman Sachs aptitude test questions and answers with detailed explanations for interview preparation.",
+      url: "/Goldman-Sachs-Aptitude-Questions.pdf",
+    },
+    {
+      title: "Aptitude Test Interview Questions",
+      desc: "Comprehensive collection of aptitude test questions and practice problems for technical interviews.",
+      url: "https://www.naukri.com/code360/library/aptitude-test-interview-questions",
+    },
+  ];
+
   const dsaResources = [
     {
       title: "A2Z Striver DSA Sheet",
-      desc: "Complete A2Z DSA course sheet by Striver covering all essential data structures and algorithms concepts systematically.",
+      desc: "Complete A to Z Data Structures and Algorithms course sheet by Striver with structured learning path and practice problems.",
       url: "https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2",
     },
     {
@@ -91,19 +107,6 @@ const Resources = () => {
       title: "Top 100 LeetCode Questions",
       desc: "Master the most important LeetCode problems for technical interviews with detailed solutions and explanations.",
       url: "https://instabyte.io/p/interview-master-100",
-    },
-  ];
-
-  const aptitudeResources = [
-    {
-      title: "Goldman Sachs Aptitude Questions",
-      desc: "Goldman Sachs aptitude questions and answers with detailed explanations for comprehensive interview preparation.",
-      url: "/Goldman-Sachs-Aptitude-Questions.pdf",
-    },
-    {
-      title: "Aptitude Test Interview Questions",
-      desc: "Comprehensive collection of aptitude test questions and practice problems for technical interviews.",
-      url: "https://www.naukri.com/code360/library/aptitude-test-interview-questions",
     },
   ];
 
@@ -124,7 +127,6 @@ const Resources = () => {
       title: "Codolio Profile Guide",
       desc: "How to build a standout Codolio profile with real examples and tips.",
       to: "https://codolio.com/blog/how-to-create-codolio-profile",
-      icon: UserCheck,
     },
     {
       title: "GitHub Profile Readme Inspiration",
@@ -146,8 +148,39 @@ const Resources = () => {
           </p>
         </div>
 
+        {/* Filter Buttons */}
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          {[
+            { key: 'all', label: 'All Resources', icon: Filter },
+            { key: 'resume', label: 'Resume', icon: FileText },
+            { key: 'dsa', label: 'DSA', icon: Search },
+            { key: 'aptitude', label: 'Aptitude', icon: BookOpen },
+            { key: 'gsoc', label: 'GSoC', icon: Building },
+            { key: 'other', label: 'Other', icon: Archive }
+          ].map((filter) => {
+            const Icon = filter.icon;
+            return (
+              <Button
+                key={filter.key}
+                variant={activeFilter === filter.key ? "default" : "outline"}
+                onClick={() => setActiveFilter(filter.key)}
+                className={`${
+                  activeFilter === filter.key
+                    ? "bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white"
+                    : "hover:bg-purple-50"
+                }`}
+                size="sm"
+              >
+                <Icon className="w-4 h-4 mr-2" />
+                {filter.label}
+              </Button>
+            );
+          })}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Resume Templates Card */}
+          {(activeFilter === 'all' || activeFilter === 'resume') && (
           <Card className="p-6 col-span-1 md:col-span-2 lg:col-span-3">
             <div className="flex items-start gap-4 mb-6">
               <div className="p-3 bg-gradient-to-r from-purple-50 to-cyan-50 rounded-md">
@@ -180,8 +213,10 @@ const Resources = () => {
               ))}
             </div>
           </Card>
+          )}
 
           {/* GSoC Resources Card */}
+          {(activeFilter === 'all' || activeFilter === 'gsoc') && (
           <Card className="p-6 col-span-1 md:col-span-2 lg:col-span-3">
             <div className="flex items-start gap-4 mb-6">
               <div className="p-3 bg-gradient-to-r from-orange-50 to-red-50 rounded-md">
@@ -221,8 +256,10 @@ const Resources = () => {
               ))}
             </div>
           </Card>
+          )}
 
           {/* DSA Resources Card */}
+          {(activeFilter === 'all' || activeFilter === 'dsa') && (
           <Card className="p-6 col-span-1 md:col-span-2 lg:col-span-3">
             <div className="flex items-start gap-4 mb-6">
               <div className="p-3 bg-gradient-to-r from-green-50 to-blue-50 rounded-md">
@@ -255,17 +292,19 @@ const Resources = () => {
               ))}
             </div>
           </Card>
+          )}
 
-          {/* Aptitude Test Prep Card */}
+          {/* Aptitude Resources Card */}
+          {(activeFilter === 'all' || activeFilter === 'aptitude') && (
           <Card className="p-6 col-span-1 md:col-span-2 lg:col-span-3">
             <div className="flex items-start gap-4 mb-6">
               <div className="p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-md">
                 <BookOpen className="w-6 h-6 text-orange-600" />
               </div>
               <div className="flex-1">
-                <h3 className="text-xl font-bold mb-2">Aptitude Test Preparation</h3>
+                <h3 className="text-xl font-bold mb-2">Aptitude Test Resources</h3>
                 <p className="text-gray-600 mb-4">
-                  Essential aptitude test resources and practice questions to excel in quantitative and logical reasoning interviews.
+                  Comprehensive aptitude test questions and practice materials for technical and behavioral interviews.
                 </p>
               </div>
             </div>
@@ -289,8 +328,11 @@ const Resources = () => {
               ))}
             </div>
           </Card>
+          )}
 
           {/* Other Resources */}
+          {(activeFilter === 'all' || activeFilter === 'other') && (
+          <>
           {resources.map((r) => {
             const Icon = r.icon;
             const isExternal = r.to.startsWith("http") || r.to.endsWith(".pdf");
@@ -318,6 +360,8 @@ const Resources = () => {
               </Card>
             );
           })}
+          </>
+          )}
         </div>
       </div>
     </div>
