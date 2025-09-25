@@ -105,6 +105,12 @@ export const HowItWorks = () => {
                     alt="Harleen Kaur" 
                     className="w-full h-full object-cover rounded-2xl"
                   />
+                ) : developer.name === "Diya Kotru" ? (
+                  <img 
+                    src="/diya-kotru.jpg" 
+                    alt="Diya Kotru" 
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
                 ) : (
                   developer.avatar
                 )}
