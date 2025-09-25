@@ -12,10 +12,9 @@ export interface Internship {
   description: string;
   skills: string[];
   applicationLink: string;
-  logo?: string;
   isRemote: boolean;
   stipendAmount?: string;
-  category: 'software' | 'data' | 'design' | 'marketing' | 'research' | 'finance' | 'consulting';
+  category: 'software' | 'data' | 'design' | 'marketing' | 'research' | 'finance' | 'consulting' | 'hackathon' | 'scholarship';
   difficulty: 'beginner' | 'intermediate' | 'advanced';
 }
 
@@ -41,7 +40,7 @@ export const internshipsData: Internship[] = [
     skills: ["Programming", "Problem Solving", "Innovation", "Teamwork"],
     applicationLink: "https://buildyourfuture.withgoogle.com/events",
     isRemote: false,
-    category: "software",
+    category: "hackathon",
     difficulty: "beginner"
   },
   {
@@ -65,7 +64,7 @@ export const internshipsData: Internship[] = [
     applicationLink: "https://amazonfutureengineer.com/",
     isRemote: true,
     stipendAmount: "Scholarship + Laptop + Stipend",
-    category: "software",
+    category: "scholarship",
     difficulty: "beginner"
   },
   {
@@ -112,7 +111,7 @@ export const internshipsData: Internship[] = [
     skills: ["Programming", "Problem Solving", "Innovation", "Competitive Programming"],
     applicationLink: "https://flipkart-grid.com/",
     isRemote: true,
-    category: "software",
+    category: "hackathon",
     difficulty: "intermediate"
   },
   {
@@ -135,7 +134,7 @@ export const internshipsData: Internship[] = [
     skills: ["Competitive Programming", "Algorithms", "Data Structures", "Logical Thinking"],
     applicationLink: "https://www.tcscodevita.com/",
     isRemote: true,
-    category: "software",
+    category: "hackathon",
     difficulty: "intermediate"
   },
   {
@@ -158,7 +157,7 @@ export const internshipsData: Internship[] = [
     skills: ["Programming", "Design", "APIs", "Creative Technology"],
     applicationLink: "https://www.adobe.com/careers/university/hackathon.html",
     isRemote: true,
-    category: "design",
+    category: "hackathon",
     difficulty: "intermediate"
   },
   {
@@ -169,7 +168,7 @@ export const internshipsData: Internship[] = [
     type: "paid",
     duration: "3 months",
     studentYear: 1,
-    deadline: "2024-02-28",
+    deadline: "2025-04-02",
     period: "march",
     requirements: [
       "Students in 1st-4th year",
@@ -245,7 +244,6 @@ export const internshipsData: Internship[] = [
     period: "aug-sept",
     requirements: [
       "1st year students",
-      "STEM fields",
       "Academic excellence",
       "Financial need"
     ],
@@ -254,7 +252,7 @@ export const internshipsData: Internship[] = [
     applicationLink: "https://www.infosys.com/about/corporate-responsibility/education/stem-star.html",
     isRemote: false,
     stipendAmount: "₹2,00,000 per year",
-    category: "research",
+    category: "scholarship",
     difficulty: "beginner"
   },
   {
@@ -278,7 +276,7 @@ export const internshipsData: Internship[] = [
     applicationLink: "https://dxc.com/",
     isRemote: false,
     stipendAmount: "₹1,50,000 per year",
-    category: "software",
+    category: "scholarship",
     difficulty: "beginner"
   },
   {
@@ -302,7 +300,7 @@ export const internshipsData: Internship[] = [
     applicationLink: "https://www.hdfcbank.com/personal/ways-to-bank/digital-banking/parivartan-scholarship",
     isRemote: false,
     stipendAmount: "₹75,000 per year",
-    category: "finance",
+    category: "scholarship",
     difficulty: "beginner"
   },
   {
@@ -339,7 +337,6 @@ export const internshipsData: Internship[] = [
     duration: "3 days",
     studentYear: 2,
     deadline: "2025-01-15",
-    period: "feb",
     requirements: [
       "Female students in 1st-4th year",
       "Basic programming knowledge",
@@ -350,7 +347,7 @@ export const internshipsData: Internship[] = [
     skills: ["Programming", "Problem Solving", "Innovation", "Teamwork"],
     applicationLink: "https://buildyourfuture.withgoogle.com/events",
     isRemote: false,
-    category: "software",
+    category: "hackathon",
     difficulty: "beginner"
   },
   {
@@ -360,8 +357,8 @@ export const internshipsData: Internship[] = [
     location: "Remote/Multiple Cities",
     type: "paid",
     duration: "3 months",
-    studentYear: 2,
-    deadline: "2024-11-30",
+  studentYear: 2,
+  deadline: "2024-11-30",
     period: "oct-dec",
     requirements: [
       "Female students in 1st and 2nd year",
@@ -397,7 +394,7 @@ export const internshipsData: Internship[] = [
     skills: ["Programming", "Problem Solving", "Innovation", "Competitive Programming"],
     applicationLink: "https://flipkart-grid.com/",
     isRemote: true,
-    category: "software",
+    category: "hackathon",
     difficulty: "intermediate"
   },
   {
@@ -420,7 +417,7 @@ export const internshipsData: Internship[] = [
     skills: ["Competitive Programming", "Algorithms", "Data Structures", "Logical Thinking"],
     applicationLink: "https://www.tcscodevita.com/",
     isRemote: true,
-    category: "software",
+    category: "hackathon",
     difficulty: "intermediate"
   },
   {
@@ -443,31 +440,7 @@ export const internshipsData: Internship[] = [
     skills: ["Programming", "Design", "APIs", "Creative Technology"],
     applicationLink: "https://www.adobe.com/careers/university/hackathon.html",
     isRemote: true,
-    category: "design",
-    difficulty: "intermediate"
-  },
-  {
-    id: "google-gsoc-2nd",
-    title: "GSOC (Google Summer of Code)",
-    company: "Google",
-    location: "Remote",
-    type: "paid",
-    duration: "3 months",
-    studentYear: 2,
-    deadline: "2024-02-28",
-    period: "march",
-    requirements: [
-      "Students in 1st-4th year",
-      "Open source contribution experience",
-      "Programming skills",
-      "Self-motivated and independent"
-    ],
-    description: "Google Summer of Code - work with open source organizations on meaningful projects. Get mentorship and stipend while contributing to real-world software.",
-    skills: ["Open Source", "Programming", "Git", "Project Management"],
-    applicationLink: "https://summerofcode.withgoogle.com/",
-    isRemote: true,
-    stipendAmount: "$1,500-$6,600",
-    category: "software",
+    category: "hackathon",
     difficulty: "intermediate"
   },
   {
@@ -539,7 +512,7 @@ export const internshipsData: Internship[] = [
     applicationLink: "https://dxc.com/",
     isRemote: false,
     stipendAmount: "₹1,50,000 per year",
-    category: "software",
+    category: "scholarship",
     difficulty: "beginner"
   },
   {
@@ -563,7 +536,7 @@ export const internshipsData: Internship[] = [
     applicationLink: "https://www.hdfcbank.com/personal/ways-to-bank/digital-banking/parivartan-scholarship",
     isRemote: false,
     stipendAmount: "₹75,000 per year",
-    category: "finance",
+    category: "scholarship",
     difficulty: "beginner"
   },
   {
@@ -633,7 +606,7 @@ export const internshipsData: Internship[] = [
     skills: ["Professional Development", "Networking", "Communication", "Career Planning"],
     applicationLink: "https://careers.linkedin.com/students",
     isRemote: true,
-    category: "consulting",
+    category: "software",
     difficulty: "beginner"
   },
   {
@@ -656,7 +629,7 @@ export const internshipsData: Internship[] = [
     skills: ["Programming", "Innovation", "Problem Solving", "Technology"],
     applicationLink: "https://www.infosys.com/careers/hackwithinfy/",
     isRemote: true,
-    category: "software",
+    category: "hackathon",
     difficulty: "intermediate"
   },
   {
@@ -703,7 +676,7 @@ export const internshipsData: Internship[] = [
     skills: ["Fintech", "Programming", "Innovation", "Digital Payments"],
     applicationLink: "https://www.americanexpress.com/careers/",
     isRemote: true,
-    category: "finance",
+    category: "hackathon",
     difficulty: "advanced"
   },
   {
@@ -843,29 +816,6 @@ export const internshipsData: Internship[] = [
     difficulty: "intermediate"
   },
   {
-    id: "google-gsoc-3rd",
-    title: "GSOC (Google Summer of Code)",
-    company: "Google",
-    location: "Remote",
-    type: "paid",
-    duration: "3 months",
-    studentYear: 3,
-    deadline: "2025-04-02",
-    requirements: [
-      "University students (18+ years old)",
-      "Programming experience",
-      "Open source contribution experience",
-      "Strong proposal writing skills"
-    ],
-    description: "Google Summer of Code is a global program focused on bringing new contributors into open source software development. Students work with an open source organization on a 3-month programming project during their break from university.",
-    skills: ["Open Source", "Programming", "Software Development", "Project Management"],
-    applicationLink: "https://summerofcode.withgoogle.com/",
-    isRemote: true,
-    stipendAmount: "$1500-$3300",
-    category: "software",
-    difficulty: "intermediate"
-  },
-  {
     id: "atlassian-women-in-tech-3rd",
     title: "Atlassian Women in Tech",
     company: "Atlassian",
@@ -931,29 +881,6 @@ export const internshipsData: Internship[] = [
     applicationLink: "https://www.flipkartcareers.com/#!/",
     isRemote: true,
     stipendAmount: "$1200-$2000",
-    category: "software",
-    difficulty: "intermediate"
-  },
-  {
-    id: "google-gsoc-3rd-fixed",
-    title: "GSOC (Google Summer of Code)",
-    company: "Google",
-    location: "Remote",
-    type: "paid",
-    duration: "3 months",
-    studentYear: 3,
-    deadline: "2025-04-02",
-    requirements: [
-      "Students in 1st-4th year",
-      "Open source contribution experience",
-      "Programming skills",
-      "Self-motivated and independent"
-    ],
-    description: "Google Summer of Code - work with open source organizations on meaningful projects. Get mentorship and stipend while contributing to real-world software.",
-    skills: ["Open Source", "Programming", "Git", "Project Management"],
-    applicationLink: "https://summerofcode.withgoogle.com/",
-    isRemote: true,
-    stipendAmount: "$1,500-$6,600",
     category: "software",
     difficulty: "intermediate"
   },
@@ -1068,7 +995,7 @@ export const internshipsData: Internship[] = [
     skills: ["Programming", "Innovation", "Problem Solving", "Technology"],
     applicationLink: "https://www.infosys.com/careers/hackwithinfy/",
     isRemote: true,
-    category: "software",
+    category: "hackathon",
     difficulty: "intermediate"
   },
   {
@@ -1090,99 +1017,8 @@ export const internshipsData: Internship[] = [
     skills: ["Fintech", "Programming", "Innovation", "Digital Payments"],
     applicationLink: "https://www.americanexpress.com/careers/",
     isRemote: true,
-    category: "finance",
+    category: "hackathon",
     difficulty: "advanced"
-  },
-  {
-    id: "7",
-    title: "Advanced Software Engineering Intern",
-    company: "Tesla",
-    location: "Austin, TX",
-    type: "paid",
-    duration: "16 weeks",
-    studentYear: 3,
-    deadline: "2026-01-30",
-    requirements: [
-      "3rd year Computer Science, Software Engineering, or related field",
-      "Strong programming skills in multiple languages",
-      "Experience with software development lifecycle",
-      "Knowledge of algorithms and system design"
-    ],
-    description: "Work on Tesla's autopilot software and vehicle control systems. Contribute to the future of autonomous driving technology.",
-    skills: ["C++", "Python", "System Design", "Machine Learning", "Automotive Software"],
-    applicationLink: "https://www.tesla.com/careers",
-    isRemote: false,
-    stipendAmount: "$8,500/month",
-    category: "software",
-    difficulty: "advanced"
-  },
-  {
-    id: "8",
-    title: "Fintech Development Specialist",
-    company: "Stripe",
-    location: "San Francisco, CA",
-    type: "paid",
-    duration: "14 weeks",
-    studentYear: 3,
-    deadline: "2026-02-15",
-    requirements: [
-      "3rd year Computer Science, Finance, or related field",
-      "Strong backend development experience",
-      "Understanding of financial systems and APIs",
-      "Experience with distributed systems"
-    ],
-    description: "Build scalable financial infrastructure that processes billions in transactions. Work on payment systems, fraud detection, and financial APIs.",
-    skills: ["Ruby", "Go", "API Development", "Financial Systems", "Distributed Systems"],
-    applicationLink: "https://stripe.com/jobs",
-    isRemote: true,
-    stipendAmount: "$9,200/month",
-    category: "finance",
-    difficulty: "advanced"
-  },
-  {
-    id: "9",
-    title: "AI Research Assistant",
-    company: "OpenAI",
-    location: "San Francisco, CA",
-    type: "paid",
-    duration: "16 weeks",
-    studentYear: 3,
-    deadline: "2026-03-10",
-    requirements: [
-      "3rd year Computer Science, AI, or related field",
-      "Strong background in machine learning",
-      "Research experience or publications preferred",
-      "Proficiency in deep learning frameworks"
-    ],
-    description: "Assist in cutting-edge AI research projects. Work alongside world-class researchers on the next generation of AI systems.",
-    skills: ["PyTorch", "TensorFlow", "Research Methods", "Deep Learning", "NLP"],
-    applicationLink: "https://openai.com/careers",
-    isRemote: true,
-    stipendAmount: "$9,500/month",
-    category: "research",
-    difficulty: "advanced"
-  },
-  {
-    id: "codess-cafe-3rd",
-    title: "Codess Cafe",
-    company: "Microsoft",
-    location: "Remote/Global",
-    type: "unpaid",
-    duration: "Ongoing",
-    studentYear: 3,
-    deadline: "2025-12-31",
-    requirements: [
-      "Female students in any year",
-      "Passion for technology",
-      "Interest in learning and networking",
-      "No prior experience required"
-    ],
-    description: "A global community of female coders supported by Microsoft. Participate in mentorship programs, networking events, and skill development workshops.",
-    skills: ["Programming", "Networking", "Mentorship", "Community Building"],
-    applicationLink: "https://www.codess.net/",
-    isRemote: true,
-    category: "software",
-    difficulty: "beginner"
   },
   {
     id: "walmart-sparkplug-3rd",
@@ -1226,7 +1062,7 @@ export const internshipsData: Internship[] = [
     skills: ["Programming", "Innovation", "Retail Technology", "Supply Chain"],
     applicationLink: "https://careers.walmart.com/sparkathon",
     isRemote: true,
-    category: "software",
+    category: "hackathon",
     difficulty: "intermediate"
   },
   {
@@ -1343,29 +1179,6 @@ export const internshipsData: Internship[] = [
     difficulty: "intermediate"
   },
   {
-    id: "google-gsoc-4th",
-    title: "GSOC (Google Summer of Code)",
-    company: "Google",
-    location: "Remote",
-    type: "paid",
-    duration: "3 months",
-    studentYear: 4,
-    deadline: "2024-02-28",
-    requirements: [
-      "Students in 1st-4th year",
-      "Open source contribution experience",
-      "Programming skills",
-      "Self-motivated and independent"
-    ],
-    description: "Google Summer of Code - work with open source organizations on meaningful projects. Get mentorship and stipend while contributing to real-world software.",
-    skills: ["Open Source", "Programming", "Git", "Project Management"],
-    applicationLink: "https://summerofcode.withgoogle.com/",
-    isRemote: true,
-    stipendAmount: "$1,500-$6,600",
-    category: "software",
-    difficulty: "intermediate"
-  },
-  {
     id: "drdo-winter-summer-intern-4th",
     title: "DRDO Winter and Summer Intern",
     company: "DRDO",
@@ -1476,7 +1289,7 @@ export const internshipsData: Internship[] = [
     skills: ["Programming", "Innovation", "Retail Technology", "Supply Chain"],
     applicationLink: "https://careers.walmart.com/sparkathon",
     isRemote: true,
-    category: "software",
+    category: "hackathon",
     difficulty: "intermediate"
   },
   {
@@ -1521,7 +1334,7 @@ export const internshipsData: Internship[] = [
     skills: ["Fintech", "Programming", "Innovation", "Digital Payments"],
     applicationLink: "https://www.americanexpress.com/careers/",
     isRemote: true,
-    category: "finance",
+    category: "hackathon",
     difficulty: "advanced"
   },
   {
@@ -1592,73 +1405,235 @@ export const internshipsData: Internship[] = [
     difficulty: "intermediate"
   },
   {
-    id: "10",
-    title: "Senior Software Engineer Intern",
-    company: "NVIDIA",
-    location: "Santa Clara, CA",
-    type: "paid",
-    duration: "20 weeks",
-    studentYear: 4,
-    deadline: "2026-04-05",
+    id: "google-women-techmaker",
+    title: "Google Women Techmaker",
+    company: "Google",
+    location: "Various Cities/Remote",
+    type: "unpaid",
+    duration: "Ongoing",
+    studentYear: 1,
+    deadline: "2025-03-15",
+    period: "march",
     requirements: [
-      "4th year Computer Science, Electrical Engineering, or related field",
-      "Extensive programming experience",
-      "Experience with GPU programming or graphics",
-      "Strong system design and architecture skills"
+      "Female students in 1st and 2nd year",
+      "Interest in technology and innovation",
+      "Basic programming knowledge",
+      "Passion for learning and networking"
     ],
-    description: "Lead major projects in GPU computing, AI acceleration, and graphics technology. Opportunity for full-time conversion upon graduation.",
-    skills: ["CUDA", "C++", "Graphics Programming", "System Architecture", "Performance Optimization"],
-    applicationLink: "https://nvidia.wd5.myworkdayjobs.com/",
-    isRemote: false,
-    stipendAmount: "$10,500/month",
-    category: "software",
-    difficulty: "advanced"
-  },
-  {
-    id: "11",
-    title: "Senior Product Strategy Intern",
-    company: "Spotify",
-    location: "New York, NY",
-    type: "paid",
-    duration: "16 weeks",
-    studentYear: 4,
-    deadline: "2026-03-20",
-    requirements: [
-      "4th year Business, Marketing, or related field",
-      "Extensive analytics and strategy experience",
-      "Leadership experience in projects or organizations",
-      "Understanding of music industry and streaming platforms"
-    ],
-    description: "Lead strategic initiatives for Spotify's global expansion and new product development. Work directly with senior leadership team.",
-    skills: ["Strategic Planning", "Data Analytics", "Leadership", "Market Research", "Business Development"],
-    applicationLink: "https://www.lifeatspotify.com/jobs",
+    description: "Join a global community of women technologists through workshops, networking events, and skill-building sessions. Get mentorship and career guidance from industry leaders.",
+    skills: ["Programming", "Leadership", "Networking", "Technology", "Career Development"],
+    applicationLink: "https://www.womentechmakers.com/",
     isRemote: true,
-    stipendAmount: "$8,800/month",
-    category: "marketing",
+    category: "software",
+    difficulty: "beginner"
+  },
+  {
+    id: "adobe-women-in-tech",
+    title: "Adobe Women In Tech",
+    company: "Adobe",
+    location: "Bangalore/Remote",
+    type: "unpaid",
+    duration: "6 months",
+    studentYear: 3,
+    deadline: "2025-08-15",
+    period: "aug",
+    requirements: [
+      "Female students in 3rd year",
+      "Computer Science or related field",
+      "Strong technical skills",
+      "Leadership potential"
+    ],
+    description: "Empowerment program for women in technology with mentorship, technical workshops, and career development opportunities. Build connections with Adobe professionals.",
+    skills: ["Technical Skills", "Leadership", "Mentorship", "Career Development", "Networking"],
+    applicationLink: "https://www.adobe.com/careers/university.html",
+    isRemote: true,
+    category: "software",
+    difficulty: "intermediate"
+  },
+  {
+    id: "grace-hopper-scholarship",
+    title: "Grace Hopper Scholarship",
+    company: "Grace Hopper Celebration",
+    location: "Various Cities/Virtual",
+    type: "unpaid",
+    duration: "Conference Duration",
+    studentYear: 4,
+    deadline: "2025-05-15",
+    period: "may",
+    requirements: [
+      "Female students in 4th year",
+      "Computer Science or related field",
+      "Strong academic performance",
+      "Leadership experience"
+    ],
+    description: "Scholarship to attend the world's largest gathering of women technologists. Network with industry leaders, attend technical sessions, and explore career opportunities.",
+    skills: ["Networking", "Leadership", "Technical Knowledge", "Career Development", "Communication"],
+    applicationLink: "https://ghc.anitab.org/",
+    isRemote: false,
+    category: "software",
+    difficulty: "intermediate"
+  },
+  {
+    id: "women-who-code-mentorship",
+    title: "Women Who Code Mentorship",
+    company: "Women Who Code",
+    location: "Global/Remote",
+    type: "unpaid",
+    duration: "6 months",
+    studentYear: 1,
+    deadline: "2025-12-15",
+    requirements: [
+      "Students in 1st-4th year",
+      "Interest in technology career",
+      "Commitment to mentorship program",
+      "Basic programming knowledge"
+    ],
+    description: "Global mentorship program connecting women in tech with industry professionals. Get career guidance, technical mentorship, and networking opportunities.",
+    skills: ["Mentorship", "Career Development", "Programming", "Networking", "Leadership"],
+    applicationLink: "https://www.womenwhocode.com/",
+    isRemote: true,
+    category: "software",
+    difficulty: "beginner"
+  },
+  {
+    id: "jp-morgan-code-for-good",
+    title: "JP Morgan — Code for Good",
+    company: "JP Morgan Chase",
+    location: "Multiple Cities",
+    type: "unpaid",
+    duration: "48 hours",
+    studentYear: 2,
+    deadline: "2025-03-10",
+    period: "march",
+    requirements: [
+      "Students in 2nd and 3rd year",
+      "Computer Science or related field",
+      "Programming skills",
+      "Team collaboration experience"
+    ],
+    description: "Annual hackathon focusing on creating technology solutions for social good. Work with JP Morgan technologists to build applications for non-profit organizations.",
+    skills: ["Programming", "Hackathon", "Social Impact", "Team Collaboration", "Innovation"],
+    applicationLink: "https://careers.jpmorgan.com/us/en/students/programs",
+    isRemote: false,
+    category: "hackathon",
+    difficulty: "intermediate"
+  },
+  {
+    id: "morgan-stanley-code-to-give",
+    title: "Morgan Stanley Code to Give",
+    company: "Morgan Stanley",
+    location: "Multiple Cities",
+    type: "unpaid",
+    duration: "3 days",
+    studentYear: 2,
+    deadline: "2025-02-20",
+    period: "feb",
+    requirements: [
+      "Students in 2nd year and 3rd year",
+      "Computer Science or related field",
+      "Strong programming skills",
+      "Interest in financial technology"
+    ],
+    description: "Competitive hackathon where students build technology solutions for charitable organizations. Winner gets internship opportunities and mentorship from Morgan Stanley professionals.",
+    skills: ["Programming", "Fintech", "Hackathon", "Problem Solving", "Innovation"],
+    applicationLink: "https://morganstanley.com/careers/students",
+    isRemote: false,
+    category: "hackathon",
+    difficulty: "intermediate"
+  },
+  {
+    id: "desis-ascend-educare",
+    title: "DESIS Ascend Educare (by D.E. Shaw)",
+    company: "D.E. Shaw & Co.",
+    location: "Hyderabad/Remote",
+    type: "paid",
+    duration: "8-12 weeks",
+    studentYear: 2,
+    deadline: "2025-09-15",
+    period: "sept",
+    requirements: [
+      "Students in 2nd and 3rd year",
+      "Computer Science, Mathematics, or related field",
+      "Strong analytical and programming skills",
+      "Excellent academic performance"
+    ],
+    description: "Prestigious scholarship and internship program by D.E. Shaw focusing on quantitative finance and technology. Includes mentorship, training, and potential full-time opportunities.",
+    skills: ["Quantitative Analysis", "Programming", "Mathematics", "Finance", "Research"],
+    applicationLink: "https://www.deshaw.com/careers",
+    isRemote: true,
+    stipendAmount: "₹80,000-₹1,20,000",
+    category: "software",
     difficulty: "advanced"
   },
   {
-    id: "12",
-    title: "Cybersecurity Lead Intern",
-    company: "Cisco",
-    location: "San Jose, CA",
-    type: "paid",
-    duration: "18 weeks",
-    studentYear: 4,
-    deadline: "2026-02-28",
+    id: "morgan-stanley-code-to-give-3rd",
+    title: "Morgan Stanley Code to Give",
+    company: "Morgan Stanley",
+    location: "Multiple Cities",
+    type: "unpaid",
+    duration: "3 days",
+    studentYear: 3,
+    deadline: "2025-02-20",
+    period: "feb",
     requirements: [
-      "4th year Cybersecurity, Computer Science, or related field",
-      "Advanced knowledge of security frameworks",
-      "Experience with penetration testing and security tools",
-      "Security certifications preferred (CEH, CISSP, etc.)"
+      "Students in 2nd and 3rd year",
+      "Computer Science or related field",
+      "Strong programming skills",
+      "Interest in financial technology"
     ],
-    description: "Lead cybersecurity initiatives and mentor junior team members. Work on enterprise-level security solutions and threat analysis.",
-    skills: ["Advanced Security", "Penetration Testing", "Leadership", "Risk Assessment", "Incident Response"],
-    applicationLink: "https://jobs.cisco.com/",
+    description: "Competitive hackathon where students build technology solutions for charitable organizations. Winner gets internship opportunities and mentorship from Morgan Stanley professionals.",
+    skills: ["Programming", "Fintech", "Hackathon", "Problem Solving", "Innovation"],
+    applicationLink: "https://morganstanley.com/careers/students",
     isRemote: false,
-    stipendAmount: "$9,800/month",
+    category: "hackathon",
+    difficulty: "intermediate"
+  },
+  {
+    id: "desis-ascend-educare-3rd",
+    title: "DESIS Ascend Educare (by D.E. Shaw)",
+    company: "D.E. Shaw & Co.",
+    location: "Hyderabad/Remote",
+    type: "paid",
+    duration: "8-12 weeks",
+    studentYear: 3,
+    deadline: "2025-09-15",
+    period: "sept",
+    requirements: [
+      "Students in 2nd and 3rd year",
+      "Computer Science, Mathematics, or related field",
+      "Strong analytical and programming skills",
+      "Excellent academic performance"
+    ],
+    description: "Prestigious scholarship and internship program by D.E. Shaw focusing on quantitative finance and technology. Includes mentorship, training, and potential full-time opportunities.",
+    skills: ["Quantitative Analysis", "Programming", "Mathematics", "Finance", "Research"],
+    applicationLink: "https://www.deshaw.com/careers",
+    isRemote: true,
+    stipendAmount: "₹80,000-₹1,20,000",
     category: "software",
     difficulty: "advanced"
+  },
+  {
+    id: "jp-morgan-code-for-good-3rd",
+    title: "JP Morgan — Code for Good",
+    company: "JP Morgan Chase",
+    location: "Multiple Cities",
+    type: "unpaid",
+    duration: "48 hours",
+    studentYear: 3,
+    deadline: "2025-03-10",
+    period: "march",
+    requirements: [
+      "Students in 2nd and 3rd year",
+      "Computer Science or related field",
+      "Programming skills",
+      "Team collaboration experience"
+    ],
+    description: "Annual hackathon focusing on creating technology solutions for social good. Work with JP Morgan technologists to build applications for non-profit organizations.",
+    skills: ["Programming", "Hackathon", "Social Impact", "Team Collaboration", "Innovation"],
+    applicationLink: "https://careers.jpmorgan.com/us/en/students/programs",
+    isRemote: false,
+    category: "hackathon",
+    difficulty: "intermediate"
   }
 ];
 
@@ -1673,7 +1648,9 @@ export const studentYearLabels: Record<number, string> = {
 
 export const categories = [
   { id: 'all', label: 'All Categories' },
-  { id: 'software', label: 'Software Development' },
+  { id: 'software', label: 'Software' },
+  { id: 'hackathon', label: 'Hackathon' },
+  { id: 'scholarship', label: 'Scholarship' },
   { id: 'data', label: 'Data Science' },
   { id: 'design', label: 'Design' },
   { id: 'marketing', label: 'Marketing' },

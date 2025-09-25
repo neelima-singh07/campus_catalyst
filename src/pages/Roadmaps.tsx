@@ -212,19 +212,13 @@ const Roadmaps = () => {
         {/* Content - ABOVE background */}
         <div className="relative max-w-4xl mx-auto text-center z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
-            Ready to Start Your Journey?
+            Master Your Skills Through Practice
           </h2>
           <p className="text-xl text-gray-200 mb-8 drop-shadow-md">
-            Join thousands of learners who have successfully followed our roadmaps to land their dream tech jobs.
+            Success in tech requires dedication, consistent practice, and continuous learning. 
+            Master the fundamentals, build real projects, and never stop improving your skills. 
+            The path isn't easy, but every hour of hard work brings you closer to your goals.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              Get Started Today
-            </Button>
-            <Button size="lg" className="bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              Join Community
-            </Button>
-          </div>
         </div>
       </section>
       </div>

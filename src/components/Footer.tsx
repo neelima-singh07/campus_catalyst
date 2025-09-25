@@ -21,7 +21,7 @@ export const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Campus Career Bloom
+              CampusCatalyst
             </h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Empowering students with opportunities to grow, learn, and succeed in the tech industry. 
@@ -88,7 +88,7 @@ export const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2 text-gray-400 text-sm">
               <Code className="w-4 h-4" />
-              <span>© 2025 Campus Career Bloom. Made with</span>
+              <span>© 2025 CampusCatalyst. Made with</span>
               <Heart className="w-4 h-4 text-red-400 animate-pulse" />
               <span>by passionate developers</span>
             </div>

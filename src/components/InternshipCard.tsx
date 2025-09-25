@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Internship } from "@/data/internships";
-import { Building2, Calendar, MapPin, Clock, Star } from "lucide-react";
+import { Building2, Clock } from "lucide-react";
 
 interface InternshipCardProps {
   internship: Internship;
@@ -12,6 +12,10 @@ export const InternshipCard = ({ internship }: InternshipCardProps) => {
     switch (category) {
       case 'software':
         return 'bg-purple-100 text-purple-800';
+      case 'hackathon':
+        return 'bg-red-100 text-red-800';
+      case 'scholarship':
+        return 'bg-green-100 text-green-800';
       case 'data':
         return 'bg-indigo-100 text-indigo-800';
       case 'design':
@@ -31,14 +35,28 @@ export const InternshipCard = ({ internship }: InternshipCardProps) => {
 
   // Extract eligible years from requirements
   const getEligibleYears = () => {
-    const requirements = internship.requirements.join(' ');
+    const requirements = internship.requirements.join(' ').toLowerCase();
     
-    if (requirements.includes('1st-4th year')) {
+    // Check for all years pattern
+    if (requirements.includes('1st-4th year') || requirements.includes('students in 1st-4th year')) {
       return ['1st Year', '2nd Year', '3rd Year', '4th Year'];
     }
-    if (requirements.includes('1st and 2nd year')) {
+    
+    // Check for multiple year patterns
+    if (requirements.includes('1st and 2nd year') || requirements.includes('female students in 1st and 2nd year')) {
       return ['1st Year', '2nd Year'];
     }
+    if (requirements.includes('2nd and 3rd year') || requirements.includes('students in 2nd and 3rd year')) {
+      return ['2nd Year', '3rd Year'];
+    }
+    if (requirements.includes('2nd year and 3rd year')) {
+      return ['2nd Year', '3rd Year'];
+    }
+    if (requirements.includes('3rd and 4th year') || requirements.includes('students in 3rd and 4th year')) {
+      return ['3rd Year', '4th Year'];
+    }
+    
+    // Check for individual year patterns
     if (requirements.includes('1st year')) {
       return ['1st Year'];
     }
@@ -60,13 +78,6 @@ export const InternshipCard = ({ internship }: InternshipCardProps) => {
       4: "4th Year"
     };
     return [labels[internship.studentYear] || `Year ${internship.studentYear}`];
-  };
-
-  // Extract tentative period from duration or deadline
-  const getTentativePeriod = () => {
-    const deadline = new Date(internship.deadline);
-    const month = deadline.toLocaleDateString('en-US', { month: 'short' });
-    return `${month} - ${internship.duration}`;
   };
 
   return (
@@ -92,15 +103,13 @@ export const InternshipCard = ({ internship }: InternshipCardProps) => {
                   <span className="font-bold text-gray-900 text-base group-hover:text-purple-900 transition-colors duration-300">
                     {internship.company}
                   </span>
-                  <div className="flex items-center gap-2 mt-0.5">
-                    <MapPin className="w-3 h-3 text-gray-400" />
-                    <span className="text-xs text-gray-500">{internship.location}</span>
-                    {internship.isRemote && (
+                  {internship.isRemote && (
+                    <div className="flex items-center gap-2 mt-0.5">
                       <Badge variant="outline" className="text-xs bg-green-50 text-green-600 border-green-200 px-1 py-0">
                         Remote
                       </Badge>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
               </div>
               <CardTitle className="text-lg font-bold text-gray-900 group-hover:text-purple-900 line-clamp-2 transition-colors duration-300">
@@ -111,10 +120,6 @@ export const InternshipCard = ({ internship }: InternshipCardProps) => {
               <Badge className={`${getCategoryColor(internship.category)} shadow-sm text-xs`}>
                 {internship.category.charAt(0).toUpperCase() + internship.category.slice(1)}
               </Badge>
-              <div className="flex items-center gap-1">
-                <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
-                <span className="text-xs text-gray-600 font-medium">{getDifficultyLevel(internship.difficulty)}</span>
-              </div>
             </div>
           </div>
 
@@ -127,32 +132,12 @@ export const InternshipCard = ({ internship }: InternshipCardProps) => {
         <CardContent className="pt-0 relative z-10">
           <div className="space-y-3">
             {/* Compact Key Details */}
-            <div className="grid grid-cols-3 gap-2">
-              <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-md group-hover:bg-purple-50 transition-colors duration-300">
-                <Calendar className="w-3 h-3 text-gray-500 group-hover:text-purple-500 transition-colors duration-300" />
-                <div>
-                  <div className="text-xs text-gray-500">Duration</div>
-                  <div className="text-xs font-medium text-gray-900">{internship.duration}</div>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-md group-hover:bg-blue-50 transition-colors duration-300">
-                <Clock className="w-3 h-3 text-gray-500 group-hover:text-blue-500 transition-colors duration-300" />
-                <div>
-                  <div className="text-xs text-gray-500">Deadline</div>
-                  <div className="text-xs font-medium text-gray-900">
-                    {new Date(internship.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-md group-hover:bg-green-50 transition-colors duration-300">
-                <Clock className="w-3 h-3 text-gray-500 group-hover:text-green-500 transition-colors duration-300" />
-                <div>
-                  <div className="text-xs text-gray-500">Period</div>
-                  <div className="text-xs font-medium text-gray-900">
-                    {internship.period ? formatPeriod(internship.period) : 'TBD'}
-                  </div>
+            <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-md group-hover:bg-green-50 transition-colors duration-300">
+              <Clock className="w-3 h-3 text-gray-500 group-hover:text-green-500 transition-colors duration-300" />
+              <div>
+                <div className="text-xs text-gray-500">Period</div>
+                <div className="text-xs font-medium text-gray-900">
+                  {internship.period ? formatPeriod(internship.period) : 'TBD'}
                 </div>
               </div>
             </div>
@@ -236,21 +221,11 @@ const getCategoryGradient = (category: string) => {
       return 'from-yellow-500 to-yellow-600';
     case 'consulting':
       return 'from-cyan-500 to-cyan-600';
+    case 'hackathon':
+      return 'from-red-500 to-red-600';
+    case 'scholarship':
+      return 'from-green-500 to-green-600';
     default:
       return 'from-gray-500 to-gray-600';
-  }
-};
-
-// Helper function to get difficulty level display
-const getDifficultyLevel = (difficulty: string) => {
-  switch (difficulty) {
-    case 'beginner':
-      return 'Entry';
-    case 'intermediate':
-      return 'Mid';
-    case 'advanced':
-      return 'Expert';
-    default:
-      return 'All';
   }
 };

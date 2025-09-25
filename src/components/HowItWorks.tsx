@@ -17,11 +17,11 @@ const developers = [
     name: "Neelima Singh",
     role: "B.Tech CSE-AI, IGDTUW '28",
     achievements: [
-      "🌟 Amazon Future Engineer Mentee",
-      "🎓 Shraman Foundation Scholar", 
-      "🚀 AI/ML & Web Development Explorer"
+      "🌟 Mentee @Amazon Future Engineer",
+      "🎓 Mentee @CodessCafe", 
+      "🚀 DSA & ML Enthusiast"
     ],
-    specialties: ["AI/ML", "Full Stack Dev", "Open Source"],
+    specialties: ["AI/ML", "DSA", "Web Development"],
     github: "https://github.com/neelima-singh07",
     linkedin: "https://www.linkedin.com/in/neelima-singh-481294318/",
     avatar: "NS",
@@ -43,7 +43,7 @@ const developers = [
 
 export const HowItWorks = () => {
   return (
-    <section className="py-32 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 relative overflow-hidden">
+    <section className="py-16 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 relative overflow-hidden">
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s' }}></div>
@@ -68,26 +68,13 @@ export const HowItWorks = () => {
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-20 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-900/40 to-cyan-900/40 backdrop-blur-md rounded-full px-6 py-3 mb-8 text-purple-200 text-sm font-medium border border-purple-400/40 shadow-lg hover:shadow-purple-500/30 transition-all duration-300">
-            <Users className="w-4 h-4 animate-pulse" />
-            Meet the Dream Team
-            <Sparkles className="w-4 h-4 text-yellow-300 animate-pulse" />
-          </div>
-          
-          <h2 className="text-5xl lg:text-7xl font-extrabold text-white mb-8 leading-tight">
-            The Visionaries
-            <span className="block bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient bg-300%">
-              Behind Your Success
-            </span>
+        <div className="text-center mb-12 animate-fade-in-up">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+            Meet the Team of 
+            <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"> developers</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            A passionate trio of innovators dedicated to revolutionizing how students discover opportunities. 
-            <span className="text-cyan-400 font-semibold"> Built with cutting-edge tech</span> and 
-            <span className="text-purple-400 font-semibold"> unlimited passion</span>.
-          </p>
         </div>
-
+        
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
           {developers.map((developer, index) => (
             <Card 
@@ -105,8 +92,16 @@ export const HowItWorks = () => {
               </div>
               
               {/* Enhanced Avatar */}
-              <div className={`relative w-24 h-24 bg-gradient-to-r ${developer.gradientColors} rounded-2xl flex items-center justify-center text-white font-bold text-3xl mb-8 mx-auto shadow-2xl group-hover:shadow-3xl group-hover:scale-125 transition-all duration-500 group-hover:rotate-3`}>
-                {developer.avatar}
+              <div className={`relative w-24 h-24 bg-gradient-to-r ${developer.gradientColors} rounded-2xl flex items-center justify-center text-white font-bold text-3xl mb-8 mx-auto shadow-2xl group-hover:shadow-3xl group-hover:scale-125 transition-all duration-500 group-hover:rotate-3 overflow-hidden`}>
+                {developer.name === "Neelima Singh" ? (
+                  <img 
+                    src="/src/WhatsApp Image 2025-07-26 at 5.01.56 PM.jpeg" 
+                    alt="Neelima Singh" 
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
+                ) : (
+                  developer.avatar
+                )}
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${developer.gradientColors} opacity-0 group-hover:opacity-30 blur-sm transition-opacity duration-500`} />
               </div>
               
