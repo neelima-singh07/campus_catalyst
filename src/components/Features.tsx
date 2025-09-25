@@ -50,39 +50,39 @@ const opportunities = [
 
 export const Features = () => {
   return (
-    <section className="py-32 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 relative overflow-hidden">
-      {/* Background Effects */}
+    <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 relative overflow-hidden">
+      {/* Background Effects - responsive sizes */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '3s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '3s' }}></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        {/* Enhanced Header */}
-        <div className="text-center mb-20 max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-900/30 to-cyan-900/30 backdrop-blur-sm rounded-full px-6 py-2 text-purple-200 text-sm font-medium border border-purple-400/30 mb-6 animate-fade-in-up">
-            <Sparkles className="w-4 h-4 text-yellow-300 animate-pulse" />
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        {/* Enhanced Header - responsive text */}
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20 max-w-5xl mx-auto">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-900/30 to-cyan-900/30 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 text-purple-200 text-xs sm:text-sm font-medium border border-purple-400/30 mb-4 sm:mb-6 animate-fade-in-up">
+            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-300 animate-pulse" />
             Transform Your Tech Journey
           </div>
           
-          <h2 className="text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">
             Opportunities That
             <span className="block bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient bg-300%">
               Change Everything
             </span>
           </h2>
-          <p className="text-xl text-gray-300 leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed px-4 sm:px-0">
             From first-year exploration to final-year career launches, we provide 
             <span className="text-cyan-400 font-semibold"> premium opportunities</span> that set you apart in the competitive tech landscape.
           </p>
         </div>
 
-        {/* Enhanced Opportunity Cards */}
-        <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-8 mb-24">
+        {/* Enhanced Opportunity Cards - responsive grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8 mb-16 sm:mb-24">
           {opportunities.map((opportunity, index) => (
             <Card 
               key={index} 
-              className={`group p-8 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-3xl hover:bg-gray-800/60 hover:border-gray-600/50 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 cursor-pointer relative overflow-hidden ${opportunity.bgPattern}`}
+              className={`group p-6 sm:p-8 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-3xl hover:bg-gray-800/60 hover:border-gray-600/50 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 cursor-pointer relative overflow-hidden ${opportunity.bgPattern}`}
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Gradient overlay on hover */}
@@ -90,26 +90,26 @@ export const Features = () => {
               
               {/* Floating decoration */}
               <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
-                <Star className="w-5 h-5 text-yellow-400 animate-pulse" />
+                <Star className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 animate-pulse" />
               </div>
               
               <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${opportunity.color} ${opportunity.hoverColor} flex items-center justify-center text-white shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-r ${opportunity.color} ${opportunity.hoverColor} flex items-center justify-center text-white shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 flex-shrink-0`}>
                     {opportunity.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-300">{opportunity.title}</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-300">{opportunity.title}</h3>
                 </div>
                 
-                <p className="text-gray-300 mb-8 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">{opportunity.description}</p>
+                <p className="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">{opportunity.description}</p>
                 
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                   {opportunity.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-gray-400 group-hover:text-gray-200 transition-colors duration-300">
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center mr-3 flex-shrink-0">
-                        <ArrowRight className="w-3 h-3 text-white" />
+                    <li key={idx} className="flex items-start text-gray-400 group-hover:text-gray-200 transition-colors duration-300">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 mt-0.5">
+                        <ArrowRight className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" />
                       </div>
-                      <span className="font-medium">{feature}</span>
+                      <span className="font-medium text-sm sm:text-base">{feature}</span>
                     </li>
                   ))}
                 </ul>

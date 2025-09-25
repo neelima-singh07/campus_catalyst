@@ -93,7 +93,7 @@ const Internships = () => {
       {/* Enhanced Header with Glassmorphism */}
       <div className="relative bg-gradient-to-r from-white/80 via-white/60 to-white/80 backdrop-blur-lg border-b border-white/20 shadow-xl">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-blue-600/10 to-indigo-600/10"></div>
-        <div className="container mx-auto px-6 py-12 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 relative z-10">
           <div className="flex items-center gap-4 mb-8 animate-slideInUp">
             <Link to="/">
               <Button variant="outline" size="sm" className="backdrop-blur-sm bg-white/80 border-white/30 hover:bg-white/90 transition-all duration-300 shadow-lg">
@@ -156,7 +156,7 @@ const Internships = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 py-12 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 relative z-10">
         {/* Enhanced Year Overview */}
         <div className="mb-12">
           <div className="text-center mb-10">
@@ -294,7 +294,7 @@ const Internships = () => {
                 </h2>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                 {filteredInternships.map((internship, index) => (
                   <div 
                     key={internship.id}
