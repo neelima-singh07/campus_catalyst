@@ -67,7 +67,7 @@ export const Footer = () => {
                     href="mailto:singhneelima8262@gmail.com" 
                     className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-xs sm:text-sm font-medium break-all"
                   >
-                    singhneelima8262@gmail.com
+                    campuscatalysthknsdk@gmail.com
                   </a>
                 </div>
               </div>
