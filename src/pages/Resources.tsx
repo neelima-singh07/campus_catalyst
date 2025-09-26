@@ -36,6 +36,11 @@ const Resources = () => {
       desc: "Software Engineering focused resume template designed for technical roles and internships.",
       url: "https://www.overleaf.com/latex/templates/swe-resume-template/bznbzdprjfyy",
     },
+    {
+      title: "Get your resume reviewed",
+      desc: "Increase your ATS Score from 0 to 90 by Tech With Upasana",
+      url: "https://sites.google.com/view/techwithupasana",
+    },
   ];
 
   const gsocResources = [
@@ -125,12 +130,6 @@ const Resources = () => {
       desc: "Essential HR interview questions and answers to help you prepare for behavioral and situational interviews.",
       to: "/pdfs/HR_interview ques.pdf",
       icon: File,
-    },
-    {
-      title: "Get your resume reviewed",
-      desc: "Increase your ATS Score from 0 to 90 by Tech With Upasana",
-      to: "https://sites.google.com/view/techwithupasana",
-      icon: FileText,
     },
     {
       title: "Codolio Profile Guide",

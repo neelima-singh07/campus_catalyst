@@ -9,7 +9,7 @@ const developers = [
     specialties: ["Web Development", "UI/UX Design", "Problem Solving", "IoT", "DSA"],
     github: "https://github.com/Harilynn",
     linkedin: "https://www.linkedin.com/in/harleen-kaur-b68aa1332?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    avatar: "HK",
+    avatar: "/diya@dev.jfif",
     gradientColors: "from-rose-500 via-pink-500 to-purple-500",
     hoverGlow: "hover:shadow-pink-500/30"
   },
@@ -99,15 +99,15 @@ export const HowItWorks = () => {
                     alt="Neelima Singh" 
                     className="w-full h-full object-cover rounded-2xl"
                   />
-                ) : developer.name === "Diya Kotru" ? (
+                ) : developer.name === "Harleen Kaur" ? (
                   <img 
-                    src="/diya@dev.jfif" 
-                    alt="Diya Kotru" 
+                    src="/harleen_dev.jfif" 
+                    alt="Harleen Kaur" 
                     className="w-full h-full object-cover rounded-2xl"
                   />
                 ) : developer.name === "Diya Kotru" ? (
                   <img 
-                    src="/diya-kotru.jpg" 
+                    src="/diya@dev.jfif" 
                     alt="Diya Kotru" 
                     className="w-full h-full object-cover rounded-2xl"
                   />
