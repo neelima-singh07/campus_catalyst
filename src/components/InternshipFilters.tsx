@@ -10,10 +10,6 @@ interface FilterState {
   studentYear: number | null;
   category: string;
   search: string;
-  location: string;
-  type: string;
-  isRemote: boolean | null;
-  difficulty: string;
 }
 
 interface FiltersProps {
@@ -34,21 +30,13 @@ export const InternshipFilters = ({ filters, onFiltersChange, resultsCount }: Fi
     onFiltersChange({
       studentYear: null,
       category: 'all',
-      search: '',
-      location: '',
-      type: 'all',
-      isRemote: null,
-      difficulty: 'all'
+      search: ''
     });
   };
 
   const hasActiveFilters = filters.studentYear !== null || 
                           filters.category !== 'all' || 
-                          filters.search !== '' || 
-                          filters.location !== '' || 
-                          filters.type !== 'all' || 
-                          filters.isRemote !== null ||
-                          filters.difficulty !== 'all';
+                          filters.search !== '';
 
   return (
     <Card className="w-full">
@@ -124,59 +112,6 @@ export const InternshipFilters = ({ filters, onFiltersChange, resultsCount }: Fi
               </SelectContent>
             </Select>
           </div>
-
-          {/* Difficulty Filter */}
-          <div>
-            <Select 
-              value={filters.difficulty} 
-              onValueChange={(value) => updateFilter('difficulty', value)}
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Difficulty" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Levels</SelectItem>
-                <SelectItem value="beginner">Beginner</SelectItem>
-                <SelectItem value="intermediate">Intermediate</SelectItem>
-                <SelectItem value="advanced">Advanced</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Type Filter */}
-          <div>
-            <Select 
-              value={filters.type} 
-              onValueChange={(value) => updateFilter('type', value)}
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Type" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Types</SelectItem>
-                <SelectItem value="paid">Paid</SelectItem>
-                <SelectItem value="unpaid">Unpaid</SelectItem>
-                <SelectItem value="stipend">Stipend</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Remote Filter */}
-          <div>
-            <Select 
-              value={filters.isRemote === null ? 'all' : filters.isRemote.toString()} 
-              onValueChange={(value) => updateFilter('isRemote', value === 'all' ? null : value === 'true')}
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Location" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Locations</SelectItem>
-                <SelectItem value="true">Remote</SelectItem>
-                <SelectItem value="false">On-site</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
         </div>
 
         {/* Active Filters Display */}
@@ -201,39 +136,12 @@ export const InternshipFilters = ({ filters, onFiltersChange, resultsCount }: Fi
                 />
               </Badge>
             )}
-            {filters.difficulty !== 'all' && (
-              <Badge variant="secondary" className="flex items-center gap-1">
-                {filters.difficulty.charAt(0).toUpperCase() + filters.difficulty.slice(1)} Level
-                <X 
-                  className="w-3 h-3 cursor-pointer hover:text-red-500" 
-                  onClick={() => updateFilter('difficulty', 'all')}
-                />
-              </Badge>
-            )}
             {filters.search && (
               <Badge variant="secondary" className="flex items-center gap-1">
                 Search: "{filters.search}"
                 <X 
                   className="w-3 h-3 cursor-pointer hover:text-red-500" 
                   onClick={() => updateFilter('search', '')}
-                />
-              </Badge>
-            )}
-            {filters.type !== 'all' && (
-              <Badge variant="secondary" className="flex items-center gap-1">
-                {filters.type.charAt(0).toUpperCase() + filters.type.slice(1)}
-                <X 
-                  className="w-3 h-3 cursor-pointer hover:text-red-500" 
-                  onClick={() => updateFilter('type', 'all')}
-                />
-              </Badge>
-            )}
-            {filters.isRemote !== null && (
-              <Badge variant="secondary" className="flex items-center gap-1">
-                {filters.isRemote ? 'Remote' : 'On-site'}
-                <X 
-                  className="w-3 h-3 cursor-pointer hover:text-red-500" 
-                  onClick={() => updateFilter('isRemote', null)}
                 />
               </Badge>
             )}

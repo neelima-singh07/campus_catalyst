@@ -18,10 +18,6 @@ interface FilterState {
   studentYear: number | null;
   category: string;
   search: string;
-  location: string;
-  type: string;
-  isRemote: boolean | null;
-  difficulty: string;
 }
 
 const Internships = () => {
