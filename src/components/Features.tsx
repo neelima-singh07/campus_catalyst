@@ -8,6 +8,7 @@ import {
   Award,
   GitBranch
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const opportunities = [
   {
@@ -17,7 +18,8 @@ const opportunities = [
     features: ["Remote & Hybrid", "Competitive stipends", "1-on-1 Mentoring", "Industry Projects"],
     color: "from-blue-500 via-cyan-500 to-teal-500",
     hoverColor: "hover:from-blue-600 hover:via-cyan-600 hover:to-teal-600",
-    bgPattern: "bg-gradient-to-br from-blue-50/5 to-cyan-50/5"
+    bgPattern: "bg-gradient-to-br from-blue-50/5 to-cyan-50/5",
+    link: "/internships?category=software"
   },
   {
     icon: <Trophy className="w-7 h-7" />,
@@ -26,7 +28,8 @@ const opportunities = [
     features: ["₹50L+ Prizes", "Global Network", "Startup Funding", "Media Coverage"],
     color: "from-orange-500 via-amber-500 to-yellow-500",
     hoverColor: "hover:from-orange-600 hover:via-amber-600 hover:to-yellow-600",
-    bgPattern: "bg-gradient-to-br from-orange-50/5 to-amber-50/5"
+    bgPattern: "bg-gradient-to-br from-orange-50/5 to-amber-50/5",
+    link: "/internships?category=hackathon"
   },
   {
     icon: <Award className="w-7 h-7" />,
@@ -35,7 +38,8 @@ const opportunities = [
     features: ["Full Funding", "Merit Based", "Global Opportunities", "Academic Support"],
     color: "from-purple-500 via-pink-500 to-rose-500",
     hoverColor: "hover:from-purple-600 hover:via-pink-600 hover:to-rose-600",
-    bgPattern: "bg-gradient-to-br from-purple-50/5 to-pink-50/5"
+    bgPattern: "bg-gradient-to-br from-purple-50/5 to-pink-50/5",
+    link: "/internships?category=scholarship"
   },
   {
     icon: <GitBranch className="w-7 h-7" />,
@@ -44,7 +48,8 @@ const opportunities = [
     features: ["Real Impact", "Community Support", "Skill Building", "Global Recognition"],
     color: "from-green-500 via-emerald-500 to-teal-500",
     hoverColor: "hover:from-green-600 hover:via-emerald-600 hover:to-teal-600",
-    bgPattern: "bg-gradient-to-br from-green-50/5 to-emerald-50/5"
+    bgPattern: "bg-gradient-to-br from-green-50/5 to-emerald-50/5",
+    link: "/internships?category=open-source"
   }
 ];
 
@@ -80,41 +85,54 @@ export const Features = () => {
         {/* Enhanced Opportunity Cards - responsive grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8 mb-16 sm:mb-24">
           {opportunities.map((opportunity, index) => (
-            <Card 
-              key={index} 
-              className={`group p-6 sm:p-8 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-3xl hover:bg-gray-800/60 hover:border-gray-600/50 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 cursor-pointer relative overflow-hidden ${opportunity.bgPattern}`}
-              style={{ animationDelay: `${index * 0.15}s` }}
+            <Link 
+              key={index}
+              to={opportunity.link}
+              className="block transform transition-transform duration-300 hover:scale-105"
             >
-              {/* Gradient overlay on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${opportunity.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}></div>
-              
-              {/* Floating decoration */}
-              <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
-                <Star className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 animate-pulse" />
-              </div>
-              
-              <div className="relative z-10">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                  <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-r ${opportunity.color} ${opportunity.hoverColor} flex items-center justify-center text-white shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 flex-shrink-0`}>
-                    {opportunity.icon}
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-300">{opportunity.title}</h3>
+              <Card 
+                className={`group p-6 sm:p-8 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-3xl hover:bg-gray-800/60 hover:border-gray-600/50 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 cursor-pointer relative overflow-hidden h-full ${opportunity.bgPattern}`}
+                style={{ animationDelay: `${index * 0.15}s` }}
+              >
+                {/* Gradient overlay on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${opportunity.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}></div>
+                
+                {/* Floating decoration */}
+                <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+                  <Star className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 animate-pulse" />
                 </div>
                 
-                <p className="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">{opportunity.description}</p>
-                
-                <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-                  {opportunity.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start text-gray-400 group-hover:text-gray-200 transition-colors duration-300">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 mt-0.5">
-                        <ArrowRight className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" />
-                      </div>
-                      <span className="font-medium text-sm sm:text-base">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Card>
+                <div className="relative z-10 h-full flex flex-col">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                    <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-r ${opportunity.color} ${opportunity.hoverColor} flex items-center justify-center text-white shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 flex-shrink-0`}>
+                      {opportunity.icon}
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-300">{opportunity.title}</h3>
+                  </div>
+                  
+                  <p className="text-sm sm:text-base text-gray-300 mb-6 sm:mb-8 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">{opportunity.description}</p>
+                  
+                  <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 flex-grow">
+                    {opportunity.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start text-gray-400 group-hover:text-gray-200 transition-colors duration-300">
+                        <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 mt-0.5">
+                          <ArrowRight className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" />
+                        </div>
+                        <span className="font-medium text-sm sm:text-base">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  {/* Click indicator */}
+                  <div className="mt-auto pt-4 border-t border-gray-700/30 group-hover:border-gray-600/50 transition-colors duration-300">
+                    <div className="flex items-center justify-between text-gray-400 group-hover:text-cyan-300 transition-colors duration-300">
+                      <span className="text-sm font-medium">Explore Opportunities</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>

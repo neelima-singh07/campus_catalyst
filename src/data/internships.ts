@@ -14,7 +14,7 @@ export interface Internship {
   applicationLink: string;
   isRemote: boolean;
   stipendAmount?: string;
-  category: 'software' | 'data' | 'design' | 'marketing' | 'research' | 'finance' | 'consulting' | 'hackathon' | 'scholarship';
+  category: 'software' | 'research' | 'consulting' | 'hackathon' | 'scholarship' | 'open-source';
   difficulty: 'beginner' | 'intermediate' | 'advanced';
 }
 
@@ -181,7 +181,7 @@ export const internshipsData: Internship[] = [
     applicationLink: "https://summerofcode.withgoogle.com/",
     isRemote: true,
     stipendAmount: "$1,500-$6,600",
-    category: "software",
+    category: "open-source",
     difficulty: "intermediate"
   },
   {
@@ -210,7 +210,7 @@ export const internshipsData: Internship[] = [
   },
   {
     id: "outreachy-open-source",
-    title: "Outreachy Open Source",
+    title: "Outreachy Open Source (All Years)",
     company: "Outreachy",
     location: "Remote",
     type: "paid",
@@ -224,12 +224,12 @@ export const internshipsData: Internship[] = [
       "Basic programming or design skills",
       "Commitment to open source"
     ],
-    description: "Outreachy provides internships for people from groups underrepresented in tech. Work remotely with experienced mentors on open source projects.",
+    description: "Outreachy provides internships for people from groups underrepresented in tech. Open to students from all academic years (1st-4th). Work remotely with experienced mentors on open source projects.",
     skills: ["Open Source", "Programming", "Design", "Documentation"],
     applicationLink: "https://www.outreachy.org/",
     isRemote: true,
     stipendAmount: "$7,000",
-    category: "software",
+    category: "open-source",
     difficulty: "beginner"
   },
   {
@@ -466,30 +466,6 @@ export const internshipsData: Internship[] = [
     stipendAmount: "₹15,000-₹25,000",
     category: "research",
     difficulty: "intermediate"
-  },
-  {
-    id: "outreachy-open-source-2nd",
-    title: "Outreachy Open Source",
-    company: "Outreachy",
-    location: "Remote",
-    type: "paid",
-    duration: "3 months",
-    studentYear: 2,
-    deadline: "2024-02-06",
-    period: "twice a year",
-    requirements: [
-      "Female students in 1st-4th year",
-      "Underrepresented groups in tech",
-      "Basic programming or design skills",
-      "Commitment to open source"
-    ],
-    description: "Outreachy provides internships for people from groups underrepresented in tech. Work remotely with experienced mentors on open source projects.",
-    skills: ["Open Source", "Programming", "Design", "Documentation"],
-    applicationLink: "https://www.outreachy.org/",
-    isRemote: true,
-    stipendAmount: "$7,000",
-    category: "software",
-    difficulty: "beginner"
   },
   {
     id: "dxc-scholarship-2nd",
@@ -812,7 +788,7 @@ export const internshipsData: Internship[] = [
     skills: ["Programming", "Design", "APIs", "Creative Technology"],
     applicationLink: "https://www.adobe.com/careers/university/hackathon.html",
     isRemote: true,
-    category: "design",
+    category: "hackathon",
     difficulty: "intermediate"
   },
   {
@@ -908,29 +884,6 @@ export const internshipsData: Internship[] = [
     difficulty: "intermediate"
   },
   {
-    id: "outreachy-open-source-3rd",
-    title: "Outreachy Open Source",
-    company: "Outreachy",
-    location: "Remote",
-    type: "paid",
-    duration: "3 months",
-    studentYear: 3,
-    deadline: "2024-02-06",
-    requirements: [
-      "Female students in 1st-4th year",
-      "Underrepresented groups in tech",
-      "Basic programming or design skills",
-      "Commitment to open source"
-    ],
-    description: "Outreachy provides internships for people from groups underrepresented in tech. Work remotely with experienced mentors on open source projects.",
-    skills: ["Open Source", "Programming", "Design", "Documentation"],
-    applicationLink: "https://www.outreachy.org/",
-    isRemote: true,
-    stipendAmount: "$7,000",
-    category: "software",
-    difficulty: "beginner"
-  },
-  {
     id: "dxc-scholarship-3rd",
     title: "DXC Scholarship",
     company: "DXC",
@@ -973,7 +926,7 @@ export const internshipsData: Internship[] = [
     applicationLink: "https://www.hdfcbank.com/personal/ways-to-bank/digital-banking/parivartan-scholarship",
     isRemote: false,
     stipendAmount: "₹75,000 per year",
-    category: "finance",
+    category: "scholarship",
     difficulty: "beginner"
   },
   {
@@ -1175,7 +1128,7 @@ export const internshipsData: Internship[] = [
     skills: ["Programming", "Design", "APIs", "Creative Technology"],
     applicationLink: "https://www.adobe.com/careers/university/hackathon.html",
     isRemote: true,
-    category: "design",
+    category: "hackathon",
     difficulty: "intermediate"
   },
   {
@@ -1200,29 +1153,6 @@ export const internshipsData: Internship[] = [
     stipendAmount: "₹15,000-₹25,000",
     category: "research",
     difficulty: "intermediate"
-  },
-  {
-    id: "outreachy-open-source-4th",
-    title: "Outreachy Open Source",
-    company: "Outreachy",
-    location: "Remote",
-    type: "paid",
-    duration: "3 months",
-    studentYear: 4,
-    deadline: "2024-02-06",
-    requirements: [
-      "Female students in 1st-4th year",
-      "Underrepresented groups in tech",
-      "Basic programming or design skills",
-      "Commitment to open source"
-    ],
-    description: "Outreachy provides internships for people from groups underrepresented in tech. Work remotely with experienced mentors on open source projects.",
-    skills: ["Open Source", "Programming", "Design", "Documentation"],
-    applicationLink: "https://www.outreachy.org/",
-    isRemote: true,
-    stipendAmount: "$7,000",
-    category: "software",
-    difficulty: "beginner"
   },
   {
     id: "dxc-scholarship-4th",
@@ -1267,7 +1197,7 @@ export const internshipsData: Internship[] = [
     applicationLink: "https://www.hdfcbank.com/personal/ways-to-bank/digital-banking/parivartan-scholarship",
     isRemote: false,
     stipendAmount: "₹75,000 per year",
-    category: "finance",
+    category: "scholarship",
     difficulty: "beginner"
   },
   {
@@ -1651,10 +1581,7 @@ export const categories = [
   { id: 'software', label: 'Software' },
   { id: 'hackathon', label: 'Hackathon' },
   { id: 'scholarship', label: 'Scholarship' },
-  { id: 'data', label: 'Data Science' },
-  { id: 'design', label: 'Design' },
-  { id: 'marketing', label: 'Marketing' },
   { id: 'research', label: 'Research' },
-  { id: 'finance', label: 'Finance' },
-  { id: 'consulting', label: 'Consulting' }
+  { id: 'consulting', label: 'Consulting' },
+  { id: 'open-source', label: 'Open Source' }
 ];

@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { InternshipCard } from "@/components/InternshipCard";
 import { InternshipFilters } from "@/components/InternshipFilters";
 import { Navigation } from "@/components/Navigation";
@@ -12,7 +12,7 @@ import {
   Building2,
   GraduationCap
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 interface FilterState {
   studentYear: number | null;
@@ -25,6 +25,9 @@ interface FilterState {
 }
 
 const Internships = () => {
+  const [searchParams] = useSearchParams();
+  const internshipsRef = useRef<HTMLDivElement>(null);
+  
   const [filters, setFilters] = useState<FilterState>({
     studentYear: null,
     category: 'all',
@@ -35,9 +38,54 @@ const Internships = () => {
     difficulty: 'all'
   });
 
+  // Handle URL parameters for year and category filtering
+  useEffect(() => {
+    const year = searchParams.get('year');
+    const category = searchParams.get('category');
+    
+    if (year) {
+      const yearNum = parseInt(year);
+      if (availableStudentYears.includes(yearNum)) {
+        setFilters(prev => ({ ...prev, studentYear: yearNum }));
+      }
+    }
+    
+    if (category && category !== 'all') {
+      setFilters(prev => ({ ...prev, category: category }));
+    }
+    
+    // Smooth scroll to internships section after a short delay if either parameter exists
+    if (year || category) {
+      setTimeout(() => {
+        scrollToInternships();
+      }, 500);
+    }
+  }, [searchParams]);
+
+  const scrollToInternships = () => {
+    if (internshipsRef.current) {
+      const offsetTop = internshipsRef.current.getBoundingClientRect().top + window.pageYOffset - 100;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleYearSelection = (year: number) => {
+    setFilters(prev => ({ ...prev, studentYear: year }));
+    scrollToInternships();
+  };
+
   const filteredInternships = useMemo(() => {
     return internshipsData.filter((internship) => {
-      const matchesYear = filters.studentYear === null || internship.studentYear === filters.studentYear;
+      // Programs available for all years (GSoC and Outreachy)
+      const allYearPrograms = ['google-gsoc', 'outreachy-open-source'];
+      const isAllYearProgram = allYearPrograms.includes(internship.id);
+      
+      const matchesYear = filters.studentYear === null || 
+        internship.studentYear === filters.studentYear || 
+        isAllYearProgram;
       const matchesCategory = filters.category === 'all' || internship.category === filters.category;
       const matchesSearch = filters.search === '' || 
         internship.title.toLowerCase().includes(filters.search.toLowerCase()) ||
@@ -53,8 +101,11 @@ const Internships = () => {
 
   const stats = useMemo(() => {
     const total = internshipsData.length;
+    const allYearPrograms = ['google-gsoc', 'outreachy-open-source'];
+    const allYearCount = internshipsData.filter(i => allYearPrograms.includes(i.id)).length;
+    
     const byYear = availableStudentYears.reduce((acc, year) => {
-      acc[year] = internshipsData.filter(i => i.studentYear === year).length;
+      acc[year] = internshipsData.filter(i => i.studentYear === year).length + allYearCount;
       return acc;
     }, {} as Record<number, number>);
 
@@ -177,7 +228,7 @@ const Internships = () => {
                 key={year}
                 className="group relative cursor-pointer animate-slideInUp"
                 style={{ animationDelay: `${index * 100}ms` }}
-                onClick={() => setFilters(prev => ({ ...prev, studentYear: year }))}
+                onClick={() => handleYearSelection(year)}
               >
                 {/* Glassmorphism Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-white/50 to-white/70 rounded-2xl backdrop-blur-lg border border-white/20 shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105"></div>
@@ -222,7 +273,7 @@ const Internships = () => {
                       className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium py-3 rounded-xl shadow-md hover:shadow-lg transform group-hover:scale-105 transition-all duration-300"
                       onClick={(e) => {
                         e.stopPropagation();
-                        setFilters(prev => ({ ...prev, studentYear: year }));
+                        handleYearSelection(year);
                       }}
                     >
                       Explore {getYearLabel(year)} Opportunities
@@ -254,7 +305,8 @@ const Internships = () => {
         </div>
 
         {/* Enhanced Results */}
-        <div className="space-y-8">{filteredInternships.length === 0 ? (
+        <div ref={internshipsRef} className="space-y-8" id="internships-section">
+          {filteredInternships.length === 0 ? (
             <div className="text-center py-16">
               <div className="relative mb-6">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full blur-2xl opacity-20 w-32 h-32 mx-auto"></div>
@@ -287,7 +339,8 @@ const Internships = () => {
             <>
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-purple-900 bg-clip-text text-transparent">
-                  {filters.studentYear ? `${getYearLabel(filters.studentYear)} ` : ''}Programs
+                  {filters.studentYear ? `${getYearLabel(filters.studentYear)} ` : ''}
+                  {filters.category !== 'all' ? `${getCategoryLabel(filters.category)} ` : ''}Programs
                   <span className="text-xl font-normal text-gray-600 ml-3">
                     ({filteredInternships.length} {filteredInternships.length === 1 ? 'result' : 'results'})
                   </span>
@@ -352,6 +405,22 @@ const getYearDescription = (year: number) => {
     default:
       return "Explore opportunities tailored to your academic level.";
   }
+};
+
+const getCategoryLabel = (category: string) => {
+  const labels: Record<string, string> = {
+    'software': 'Software',
+    'hackathon': 'Hackathon',
+    'scholarship': 'Scholarship',
+    'research': 'Research',
+    'data': 'Data Science',
+    'design': 'Design',
+    'marketing': 'Marketing',
+    'finance': 'Finance',
+    'consulting': 'Consulting',
+    'open-source': 'Open Source'
+  };
+  return labels[category] || category.charAt(0).toUpperCase() + category.slice(1);
 };
 
 export default Internships;
